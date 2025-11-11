@@ -1,11 +1,15 @@
 import Seo from "@/ui/components/seo";
+import Button from "@/ui/design-system/typography/button/button";
 import Typography from "@/ui/design-system/typography/typography";
 
 export default function Home() {
 	return (
 		<div>
 			<Seo title="title" description="hello world" />
-			<div className="space-y-5">
+			<Button>
+				clique moi
+			</Button>
+			{/* <div className="space-y-5">
 				<Typography variant="h1" components="h1" theme="primary">
 					Coders Monkey
 				</Typography>
@@ -24,7 +28,7 @@ export default function Home() {
 				<Typography variant="h4" weight="medium" components="h1">
 					Coders Monkey
 				</Typography>
-			</div>
+			</div> */}
 		</div>
 	);
 }
