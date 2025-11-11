@@ -1,10 +1,13 @@
 import Seo from "@/ui/components/seo";
+import Typography from "@/ui/design-system/typography/typography";
 
 export default function Home() {
 	return(
 		<div>
 			<Seo title="title" description="hello world"/>
-			<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, tempore.</h1>
+			<Typography components="h1">
+				Coders Monkey
+			</Typography>
 		</div>
 	)
 }
