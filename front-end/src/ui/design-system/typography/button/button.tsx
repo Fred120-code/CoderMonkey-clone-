@@ -38,7 +38,18 @@ const button = ({
 				"bg-white border border-gray-500 text-gray-900 rounded";
 			break;
 		case "ico":
-			variantStyle = "";
+			if (iconTheme === "accent") {
+				variantStyle =
+					"bg-primary hover:bg-primary-400 text-white rounded-full";
+			}
+			if (iconTheme === "secondary") {
+				variantStyle =
+					"bg-primary-200 hover:bg-primary-300/50 text-primary rounded-full";
+			}
+			if (iconTheme === "gray") {
+				variantStyle =
+					"bg-gray-700 hover:bg-gray-600 text-white rounded-full";
+			}
 			break;
 		case "disabled":
 			variantStyle =
@@ -71,6 +82,7 @@ const button = ({
 				onClick={() => console.log("click")}
 				disabled={disabled}
 			>
+				{icon && variants == "ico" ? <></> : <>{children}</>}
 				{children}
 			</button>
 		</div>
