@@ -27,19 +27,22 @@ const button = ({
 
 	switch (variants) {
 		case "accent": //default
-			variantStyle = "";
+			variantStyle = "bg-primary hover:bg-primary-400 text-white rounded";
 			break;
 		case "secondary":
-			variantStyle = "";
+			variantStyle =
+				"bg-primary-200 hover:bg-primary-300/50 text-primary rounded";
 			break;
-		case "disabled":
-			variantStyle = "";
+		case "outline":
+			variantStyle =
+				"bg-white border border-gray-500 text-gray-900 rounded";
 			break;
 		case "ico":
 			variantStyle = "";
 			break;
-		case "outline":
-			variantStyle = "";
+		case "disabled":
+			variantStyle =
+				"bg-gray-400 rounded border border-gray-500 text-gray-600 cursor-not-allowed";
 			break;
 
 		default:
@@ -47,14 +50,14 @@ const button = ({
 	}
 
 	switch (size) {
+		case "small":
+			sizeStyle = "text-caption3 font-medium px-[14px] py-[11px]";
+			break;
 		case "medium": //default
-			sizeStyle = "";
+			sizeStyle = "text-caption2 font-medium px-[18px] py-[15px]";
 			break;
 		case "large":
-			sizeStyle = "";
-			break;
-		case "small":
-			sizeStyle = "";
+			sizeStyle = "text-caption1 font-medium px-[22px] py-[18px]";
 			break;
 
 		default:
@@ -64,7 +67,7 @@ const button = ({
 		<div>
 			<button
 				type="button"
-				className={clsx(variantStyle, sizeStyle, "")}
+				className={clsx(variantStyle, sizeStyle, icoSize, "")}
 				onClick={() => console.log("click")}
 				disabled={disabled}
 			>
