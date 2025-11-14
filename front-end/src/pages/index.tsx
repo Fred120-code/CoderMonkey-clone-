@@ -1,17 +1,21 @@
 import Seo from "@/ui/components/seo";
-import Button from "@/ui/design-system/typography/button/button";
+import Button from "@/ui/design-system/button/button";
 import Typography from "@/ui/design-system/typography/typography";
-import { RiUser6Fill} from "react-icons/ri"
-
+import { RiUser6Fill } from "react-icons/ri";
+import Spinner from "@/ui/design-system/spinner/spinner";
 
 export default function Home() {
 	return (
 		<div className="flex flex-col items-center gap-5">
 			<Seo title="title" description="hello world" />
-
+			<Spinner />
 			<div className="flex justify-center items-center gap-4">
-				<Button size="small" icon={{ icon: RiUser6Fill }} iconPosition="right">
-					RiUser6Fill
+				<Button
+					size="small"
+					icon={{ icon: RiUser6Fill }}
+					iconPosition="right"
+				>
+					accent
 				</Button>
 				<Button size="small" variants="accent">
 					clique moi
