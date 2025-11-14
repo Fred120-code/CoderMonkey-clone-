@@ -1,6 +1,8 @@
 import Seo from "@/ui/components/seo";
 import Button from "@/ui/design-system/typography/button/button";
 import Typography from "@/ui/design-system/typography/typography";
+import { RiUser6Fill} from "react-icons/ri"
+
 
 export default function Home() {
 	return (
@@ -8,24 +10,78 @@ export default function Home() {
 			<Seo title="title" description="hello world" />
 
 			<div className="flex justify-center items-center gap-4">
-				<Button size="small" variants="accent">clique moi</Button>
-				<Button size="small" variants="secondary">clique moi</Button>
-				<Button size="small" variants="disabled">clique moi</Button>
-				<Button size="small" variants="outline">clique moi</Button>
+				<Button size="small" icon={{ icon: RiUser6Fill }} iconPosition="right">
+					RiUser6Fill
+				</Button>
+				<Button size="small" variants="accent">
+					clique moi
+				</Button>
+				<Button size="small" variants="secondary">
+					clique moi
+				</Button>
+				<Button size="small" variants="disabled">
+					clique moi
+				</Button>
+				<Button size="small" variants="outline">
+					clique moi
+				</Button>
+				<Button
+					size="small"
+					variants="ico"
+					icon={{ icon: RiUser6Fill }}
+				/>
+				<Button
+					size="small"
+					variants="ico"
+					icon={{ icon: RiUser6Fill }}
+					iconTheme="secondary"
+				/>
+				<Button
+					size="small"
+					variants="ico"
+					icon={{ icon: RiUser6Fill }}
+					iconTheme="gray"
+				/>
 			</div>
 
 			<div className="flex justify-center items-center gap-4">
-				<Button size="medium" variants="accent">clique moi</Button>
-				<Button size="medium" variants="secondary">clique moi</Button>
-				<Button size="medium" variants="disabled">clique moi</Button>
-				<Button size="medium" variants="outline">clique moi</Button>
+				<Button size="medium" variants="accent">
+					clique moi
+				</Button>
+				<Button size="medium" variants="secondary">
+					clique moi
+				</Button>
+				<Button size="medium" variants="disabled">
+					clique moi
+				</Button>
+				<Button size="medium" variants="outline">
+					clique moi
+				</Button>
+				<Button
+					size="medium"
+					variants="ico"
+					icon={{ icon: RiUser6Fill }}
+				/>
 			</div>
 
 			<div className="flex justify-center items-center gap-4">
-				<Button size="large" variants="accent">clique moi</Button>
-				<Button size="large" variants="secondary">clique moi</Button>
-				<Button size="large" variants="disabled">clique moi</Button>
-				<Button size="large" variants="outline">clique moi</Button>
+				<Button size="large" variants="accent">
+					clique moi
+				</Button>
+				<Button size="large" variants="secondary">
+					clique moi
+				</Button>
+				<Button size="large" variants="disabled">
+					clique moi
+				</Button>
+				<Button size="large" variants="outline">
+					clique moi
+				</Button>
+				<Button
+					size="large"
+					variants="ico"
+					icon={{ icon: RiUser6Fill }}
+				/>
 			</div>
 
 			<div className="space-y-5">

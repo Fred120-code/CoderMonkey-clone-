@@ -1,9 +1,10 @@
 import clsx from "clsx";
+import { IconProps } from "@/types/iconProps";
 
 interface Props {
 	size?: "medium" | "large" | "small";
 	variants?: "accent" | "secondary" | "disabled" | "ico" | "outline";
-	icon?: any;
+	icon?: IconProps;
 	iconTheme?: "accent" | "secondary" | "gray";
 	iconPosition?: "left" | "right";
 	disabled?: boolean;
@@ -62,13 +63,28 @@ const button = ({
 
 	switch (size) {
 		case "small":
-			sizeStyle = "text-caption3 font-medium px-[14px] py-[11px]";
+			sizeStyle = `text-caption3 font-medium  ${
+				variants === "ico"
+					? "flex items-center justify-center w-[40px] h-[40px]"
+					: "px-[14px] py-[12px]"
+			}`;
+			icoSize = 18;
 			break;
 		case "medium": //default
-			sizeStyle = "text-caption2 font-medium px-[18px] py-[15px]";
+			sizeStyle = `text-caption2 font-medium  ${
+				variants === "ico"
+					? "flex items-center justify-center w-[50px] h-[50px]"
+					: "px-[18px] py-[15px] "
+			}`;
+			icoSize = 20;
 			break;
 		case "large":
-			sizeStyle = "text-caption1 font-medium px-[22px] py-[18px]";
+			sizeStyle = `text-caption1 font-medium  ${
+				variants === "ico"
+					? "flex items-center justify-center w-[60px] h-[60px]"
+					: "px-[22px] py-[18px]"
+			}`;
+			icoSize = 24;
 			break;
 
 		default:
@@ -79,11 +95,21 @@ const button = ({
 			<button
 				type="button"
 				className={clsx(variantStyle, sizeStyle, icoSize, "")}
-				onClick={() => console.log("click")}
 				disabled={disabled}
 			>
-				{icon && variants == "ico" ? <></> : <>{children}</>}
-				{children}
+				{icon && variants == "ico" ? (
+					<icon.icon size={icoSize} />
+				) : (
+					<div className={clsx(icon && "flex items-center gap-1")}>
+						{icon && iconPosition === "left" && (
+							<icon.icon size={icoSize} />
+						)}
+						{children}
+						{icon && iconPosition === "right" && (
+							<icon.icon size={icoSize} />
+						)}
+					</div>
+				)}
 			</button>
 		</div>
 	);
