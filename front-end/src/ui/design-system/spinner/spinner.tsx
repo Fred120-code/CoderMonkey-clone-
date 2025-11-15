@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 interface spinnerProps {
 	size?: "small" | "large" | "medium";
 	variant?: "primary" | "white";
@@ -9,13 +11,13 @@ const Spinner = ({ size = "medium", variant = "primary" }: spinnerProps) => {
 
 	switch (size) {
 		case "small":
-			sizeStyle = "";
+			sizeStyle = "w-5 h-5";
 			break;
 		case "medium": //default
-			sizeStyle = "";
+			sizeStyle = "w-9 h-9";
 			break;
 		case "large":
-			sizeStyle = "";
+			sizeStyle = "w-12 h-12";
 			break;
 
 		default:
@@ -24,10 +26,10 @@ const Spinner = ({ size = "medium", variant = "primary" }: spinnerProps) => {
 
 	switch (variant) {
 		case "primary": //default
-			variantStyle = "";
+			variantStyle = "text-primary";
 			break;
 		case "white":
-			variantStyle = "";
+			variantStyle = "text-white";
 			break;
 
 		default:
@@ -35,37 +37,25 @@ const Spinner = ({ size = "medium", variant = "primary" }: spinnerProps) => {
 	}
 	return (
 		<svg
-			viewBox="0 0 14 14"
-            className="w-20 h-20"
+			role="spinner"
+			viewBox="0 0 24 24"
+			className={clsx(sizeStyle, variantStyle, " animate-spin")}
 			xmlns="http://www.w3.org/2000/svg"
-			fill="#000000"
+			fill="none"
 		>
-			<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-			<g
-				id="SVGRepo_tracerCarrier"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-			></g>
-			<g id="SVGRepo_iconCarrier">
-				{" "}
-				<g fill="none" fill-rule="evenodd">
-					{" "}
-					<circle
-						cx="7"
-						cy="7"
-						r="6"
-						stroke="#000000"
-						stroke-opacity=".1"
-						stroke-width="2"
-					></circle>{" "}
-					<path
-						fill="#000000"
-						fill-opacity=""
-						fill-rule="nonzero"
-						d="M7 0a7 7 0 0 1 7 7h-2a5 5 0 0 0-5-5V0z"
-					></path>{" "}
-				</g>{" "}
-			</g>
+			<circle
+				className="opacity-25"
+				cx="12"
+				cy="12"
+				r="10"
+				stroke="currentColor"
+				stroke-width="4"
+			></circle>{" "}
+			<path
+				className=" opacity-70"
+				fill="currentColor"
+				d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h-4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824  3 7.938l3-2.647z"
+			></path>{" "}
 		</svg>
 	);
 };

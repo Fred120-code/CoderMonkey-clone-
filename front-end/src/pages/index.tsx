@@ -6,30 +6,36 @@ import Spinner from "@/ui/design-system/spinner/spinner";
 
 export default function Home() {
 	return (
-		<div className="flex flex-col items-center gap-5">
+		<div className="flex flex-col justify-center  gap-5 mt-10 ml-10">
 			<Seo title="title" description="hello world" />
-			<Spinner />
-			<div className="flex justify-center items-center gap-4">
+			<div className="flex items-center gap-4">
+				<Spinner size="small" />
+				<Spinner size="medium" />
+				<Spinner size="large" />
+			</div>
+			<div className="flex  gap-4">
 				<Button
+					isloading
 					size="small"
 					icon={{ icon: RiUser6Fill }}
 					iconPosition="right"
 				>
 					accent
 				</Button>
-				<Button size="small" variants="accent">
+				<Button isloading size="small" variants="accent">
 					clique moi
 				</Button>
-				<Button size="small" variants="secondary">
+				<Button isloading size="small" variants="secondary">
 					clique moi
 				</Button>
-				<Button size="small" variants="disabled">
+				<Button isloading size="small" variants="disabled">
 					clique moi
 				</Button>
-				<Button size="small" variants="outline">
+				<Button isloading size="small" variants="outline">
 					clique moi
 				</Button>
 				<Button
+					isloading
 					size="small"
 					variants="ico"
 					icon={{ icon: RiUser6Fill }}
@@ -48,7 +54,7 @@ export default function Home() {
 				/>
 			</div>
 
-			<div className="flex justify-center items-center gap-4">
+			<div className="flex  items-center gap-4">
 				<Button size="medium" variants="accent">
 					clique moi
 				</Button>
@@ -68,7 +74,7 @@ export default function Home() {
 				/>
 			</div>
 
-			<div className="flex justify-center items-center gap-4">
+			<div className="flex items-center gap-4">
 				<Button size="large" variants="accent">
 					clique moi
 				</Button>
