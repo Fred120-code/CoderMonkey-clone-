@@ -5,7 +5,6 @@ export interface PropsLogo {
 	size?: "very-small" | "small" | "medium" | "large";
 }
 
-console.log(logoMonkey)
 const Logo = ({ size= "medium" }: PropsLogo) => {
 	let sizeLogo: number = 0;
 

@@ -95,7 +95,12 @@ const button = ({
 		<div>
 			<button
 				type="button"
-				className={clsx(variantStyle, sizeStyle, icoSize, "relative")}
+				className={clsx(
+					variantStyle,
+					sizeStyle,
+					icoSize,
+					"relative animate"
+				)}
 			>
 				{isloading && (
 					<div className="absolute inset-0 flex justify-center items-center">
