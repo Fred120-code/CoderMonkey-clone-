@@ -1,14 +1,15 @@
-import Seo from "@/ui/components/seo";
+import Seo from "@/ui/components/seo/seo";
 import Button from "@/ui/design-system/button/button";
 import Typography from "@/ui/design-system/typography/typography";
 import { RiUser6Fill } from "react-icons/ri";
 import Spinner from "@/ui/design-system/spinner/spinner";
-import LogoMonkey from "@/ui/design-system/logo/logo"
-import LogoAvatar from "@/ui/design-system/logo/avatar"
+import LogoMonkey from "@/ui/design-system/logo/logo";
+import LogoAvatar from "@/ui/design-system/logo/avatar";
+import Container from "@/ui/components/container/container";
 
 export default function Home() {
 	return (
-		<div className="flex flex-col justify-center items-start  gap-5 mt-10 ml-10">
+		<Container className="space-y-10 py-10">
 			<Seo title="title" description="hello world" />
 
 			<div className="flex items-center gap-2 border border-gray-400 rounded p-5">
@@ -140,6 +141,6 @@ export default function Home() {
 					Coders Monkey
 				</Typography>
 			</div>
-		</div>
+		</Container>
 	);
 }
