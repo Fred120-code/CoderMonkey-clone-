@@ -49,7 +49,7 @@ const Spinner = ({ size = "medium", variant = "primary" }: spinnerProps) => {
 				cy="12"
 				r="10"
 				stroke="currentColor"
-				stroke-width="4"
+				strokeWidth="4"
 			></circle>{" "}
 			<path
 				className=" opacity-70"
