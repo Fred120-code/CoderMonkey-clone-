@@ -100,6 +100,12 @@ const button = ({
 			break;
 	}
 
+	const handleclick = () => {
+		if (action) {
+			action()
+		}
+	};
+
 	const buttonContent = (
 		<>
 			{isloading && (
@@ -134,6 +140,7 @@ const button = ({
 			<div>
 				<button
 					type="button"
+					onClick={handleclick}
 					className={clsx(
 						variantStyle,
 						sizeStyle,
