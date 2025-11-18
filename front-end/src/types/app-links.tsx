@@ -1,7 +1,11 @@
+import { Linktypes } from "@/lib/link-types";
+import { IconType } from "react-icons";
+
 export interface PropsAppLinks {
 	label: string;
 	baseUrl: string;
-	type: string;
+	type: Linktypes;
+	icon?: IconType
 }
 
 export interface FooterLinks {

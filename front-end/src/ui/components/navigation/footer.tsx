@@ -12,6 +12,7 @@ import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
 import { PropsAppLinks } from "@/types/app-links";
 import { LinkType } from "@/lib/link-types";
+import { SocialNetworkButton } from "./social-network-button";
 
 const footer = () => {
 	const footerNavigationLinks = footerLink.map((element) => (
@@ -42,7 +43,7 @@ const footer = () => {
 						/>
 					</a>
 				</div>
-				<div className="flex gap-6">{footerNavigationLinks}</div>
+				<div className="flex gap-5">{footerNavigationLinks}</div>
 			</Container>
 
 			<Container className="pt-9 pb-11 space-y-11">
@@ -60,7 +61,9 @@ const footer = () => {
 						}
 						{`- DevFullstack`}
 					</Typographie>
-					<div></div>
+					<div>
+						<SocialNetworkButton theme="gray"/>
+					</div>
 				</div>
 			</Container>
 		</div>
@@ -84,7 +87,7 @@ const FooterLink = ({ data }: footerLink) => {
 	));
 
 	return (
-		<div className="min-w-[190px]">
+		<div className="min-w-[170px]">
 			<Typographie
 				theme="white"
 				variant="caption2"

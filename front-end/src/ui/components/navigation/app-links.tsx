@@ -1,4 +1,5 @@
 import { PropsAppLinks } from "@/types/app-links";
+import { RiLinkedinFill, RiSlackFill, RiYoutubeFill } from "react-icons/ri";
 const footerApplicationLinks: PropsAppLinks[] = [
 	{
 		label: "Acceuil",
@@ -65,21 +66,24 @@ const footerInformationsLinks: PropsAppLinks[] = [
 		type: "internal",
 	},
 ];
-const footerSocialNetworkLinks: PropsAppLinks[] = [
+export const footerSocialNetworkLinks: PropsAppLinks[] = [
 	{
 		label: "Youtube",
 		baseUrl: "/#",
 		type: "external",
+		icon: RiYoutubeFill,
 	},
 	{
 		label: "Linkdin",
 		baseUrl: "/#",
 		type: "external",
+		icon: RiLinkedinFill,
 	},
 	{
 		label: "Slack",
 		baseUrl: "/#",
 		type: "external",
+		icon: RiSlackFill
 	},
 ];
 
