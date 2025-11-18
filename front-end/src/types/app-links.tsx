@@ -1,7 +1,10 @@
-interface PropsAppLinks {
-    label: string,
-    baseUrl: string,
-    type: string
+export interface PropsAppLinks {
+	label: string;
+	baseUrl: string;
+	type: string;
 }
 
-export default PropsAppLinks
+export interface FooterLinks {
+	label: string;
+	links: PropsAppLinks[];
+}

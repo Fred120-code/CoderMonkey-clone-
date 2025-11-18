@@ -1,53 +1,27 @@
 //COMPOSANTS
 import Container from "../container/container";
-import { footerApplicationLinks } from "./app-links";
-import { footerInformationsLinks } from "./app-links";
-import { footerUsersLinks } from "./app-links";
-import { footerSocialNetworkLinks } from "./app-links";
+import { footerLink } from "./app-links";
+import ActiveLink from "./active-link";
+import { FooterLinks } from "@/types/app-links";
 
 //DESIGN SYSTEME
 import Typographie from "@/ui/design-system/typography/typography";
 
 //IMPORT NEXTJS
 import Image from "next/image";
-import Link from "next/link";
+import { v4 as uuidv4 } from "uuid";
+import { PropsAppLinks } from "@/types/app-links";
+import { LinkType } from "@/lib/link-types";
 
 const footer = () => {
-	const footerApplicationLink = () => {
-		return footerApplicationLinks.map((element) => (
-			<Typographie variant="caption4" theme="gray" weight="medium">
-				<Link href={element.baseUrl}>{element.label} </Link>
-			</Typographie>
-		));
-	};
+	const footerNavigationLinks = footerLink.map((element) => (
+		<FooterLink key={uuidv4()} data={element} />
+	));
 
-	const footerInformationLink = () => {
-		return footerInformationsLinks.map((element) => (
-			<Typographie variant="caption4" theme="gray" weight="medium">
-				<Link href={element.baseUrl}>{element.label} </Link>
-			</Typographie>
-		));
-	};
-
-	const footerUsersLink = () => {
-		return footerUsersLinks.map((element) => (
-			<Typographie variant="caption4" theme="gray" weight="medium">
-				<Link href={element.baseUrl}>{element.label} </Link>
-			</Typographie>
-		));
-	};
-
-	const footerSocialNetworkLink = () => {
-		return footerSocialNetworkLinks.map((element) => (
-			<Typographie variant="caption4" theme="gray" weight="medium">
-				<Link href={element.baseUrl}>{element.label} </Link>
-			</Typographie>
-		));
-	};
-
+	console.log(footerNavigationLinks);
 	return (
-		<div className="bg-gray ">
-			<Container className="flex justify-between pt-16 items-center">
+		<div className="bg-gray">
+			<Container className="flex justify-between pt-16 ">
 				<div className="flex items-center flex-col gap-1">
 					<Typographie
 						variant="caption1"
@@ -68,41 +42,7 @@ const footer = () => {
 						/>
 					</a>
 				</div>
-
-				<div className="space-x-9 flex ">
-					<div className="flex flex-col gap-6">
-						<Typographie variant="caption3" theme="white">
-							App
-						</Typographie>
-						<div className="flex flex-col gap-4">
-							{footerApplicationLink()}
-						</div>
-					</div>
-					<div className="flex flex-col gap-6">
-						<Typographie variant="caption3" theme="white">
-							Utilisateur
-						</Typographie>
-						<div className="flex flex-col gap-4">
-							{footerUsersLink()}
-						</div>
-					</div>
-					<div className="flex flex-col gap-6">
-						<Typographie variant="caption3" theme="white">
-							Informations
-						</Typographie>
-						<div className="flex flex-col gap-4">
-							{footerInformationLink()}
-						</div>
-					</div>
-					<div className="flex flex-col gap-6">
-						<Typographie variant="caption3" theme="white">
-							Réseaux
-						</Typographie>
-						<div className="flex flex-col gap-4">
-							{footerSocialNetworkLink()}
-						</div>
-					</div>
-				</div>
+				<div className="flex gap-6">{footerNavigationLinks}</div>
 			</Container>
 
 			<Container className="pt-9 pb-11 space-y-11">
@@ -127,4 +67,36 @@ const footer = () => {
 	);
 };
 
+interface footerLink {
+	data: FooterLinks;
+}
+
+const FooterLink = ({ data }: footerLink) => {
+	const LinkList = data.links.map((element) => (
+		<div key={uuidv4()}>
+			{element.type === LinkType.INTERNAL && (
+				<ActiveLink href={element.baseUrl}> {element.label}</ActiveLink>
+			)}
+			{element.type === LinkType.EXTERNAL && (
+				<a href={element.baseUrl}>{element.label}</a>
+			)}
+		</div>
+	));
+
+	return (
+		<div className="min-w-[190px]">
+			<Typographie
+				theme="white"
+				variant="caption2"
+				weight="medium"
+				className="pb-5"
+			>
+				{data.label}
+			</Typographie>
+			<Typographie variant="caption3" theme="gray" className="space-y-4">
+				{LinkList}
+			</Typographie>
+		</div>
+	);
+};
 export default footer;

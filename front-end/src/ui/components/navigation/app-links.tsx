@@ -1,6 +1,5 @@
-import PropsAppLinks from "@/types/app-links";
-
-export const footerApplicationLinks: PropsAppLinks[] = [
+import { PropsAppLinks } from "@/types/app-links";
+const footerApplicationLinks: PropsAppLinks[] = [
 	{
 		label: "Acceuil",
 		baseUrl: "/",
@@ -18,15 +17,14 @@ export const footerApplicationLinks: PropsAppLinks[] = [
 	},
 	{
 		label: "Formation",
-		baseUrl: "/",
+		baseUrl: "/#",
 		type: "external",
 	},
 ];
-
-export const footerUsersLinks: PropsAppLinks[] = [
+const footerUsersLinks: PropsAppLinks[] = [
 	{
 		label: "Mon espace",
-		baseUrl: "/",
+		baseUrl: "/#",
 		type: "internal",
 	},
 	{
@@ -41,12 +39,11 @@ export const footerUsersLinks: PropsAppLinks[] = [
 	},
 	{
 		label: "Mot de passe oublier",
-		baseUrl: "/",
+		baseUrl: "/#",
 		type: "internal",
 	},
 ];
-
-export const footerInformationsLinks: PropsAppLinks[] = [
+const footerInformationsLinks: PropsAppLinks[] = [
 	{
 		label: "CGU",
 		baseUrl: "/#",
@@ -64,12 +61,11 @@ export const footerInformationsLinks: PropsAppLinks[] = [
 	},
 	{
 		label: "Contact",
-		baseUrl: "/",
+		baseUrl: "/#",
 		type: "internal",
 	},
 ];
-
-export const footerSocialNetworkLinks: PropsAppLinks[] = [
+const footerSocialNetworkLinks: PropsAppLinks[] = [
 	{
 		label: "Youtube",
 		baseUrl: "/#",
@@ -84,5 +80,24 @@ export const footerSocialNetworkLinks: PropsAppLinks[] = [
 		label: "Slack",
 		baseUrl: "/#",
 		type: "external",
+	},
+];
+
+export const footerLink = [
+	{
+		label: "App",
+		links: footerApplicationLinks,
+	},
+	{
+		label: "Utilisateurs",
+		links: footerUsersLinks,
+	},
+	{
+		label: "Informations",
+		links: footerInformationsLinks,
+	},
+	{
+		label: "Réseaux",
+		links: footerSocialNetworkLinks,
 	},
 ];
