@@ -1,5 +1,7 @@
 import { PropsAppLinks } from "@/types/app-links";
 import { RiGithubFill, RiLinkedinFill, RiSlackFill } from "react-icons/ri";
+
+
 const footerApplicationLinks: PropsAppLinks[] = [
 	{
 		label: "Acceuil",

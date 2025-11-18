@@ -10,7 +10,6 @@ import Typographie from "@/ui/design-system/typography/typography";
 //IMPORT NEXTJS
 import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
-import { PropsAppLinks } from "@/types/app-links";
 import { LinkType } from "@/lib/link-types";
 import { SocialNetworkButton } from "./social-network-button";
 
@@ -19,10 +18,9 @@ const footer = () => {
 		<FooterLink key={uuidv4()} data={element} />
 	));
 
-	console.log(footerNavigationLinks);
 	return (
 		<div className="bg-gray">
-			<Container className="flex justify-between pt-16 ">
+			<Container className="flex justify-between pt-11 ">
 				<div className="flex items-center flex-col gap-1">
 					<Typographie
 						variant="caption1"
@@ -43,10 +41,10 @@ const footer = () => {
 						/>
 					</a>
 				</div>
-				<div className="flex gap-5">{footerNavigationLinks}</div>
+				<div className="flex">{footerNavigationLinks}</div>
 			</Container>
 
-			<Container className="pt-9 pb-11 space-y-11">
+			<Container className=" pb-8 space-y-5">
 				<hr className="text-gray-800" />
 				<div className="flex justify-between items-center">
 					<Typographie variant="caption4" theme="gray">
@@ -81,22 +79,22 @@ const FooterLink = ({ data }: footerLink) => {
 				<ActiveLink href={element.baseUrl}> {element.label}</ActiveLink>
 			)}
 			{element.type === LinkType.EXTERNAL && (
-				<a href={element.baseUrl}>{element.label}</a>
+				<a href={element.baseUrl} target="_blank">{element.label}</a>
 			)}
 		</div>
 	));
 
 	return (
-		<div className="min-w-[170px]">
+		<div className="min-w-[150px]">
 			<Typographie
 				theme="white"
-				variant="caption2"
+				variant="caption3"
 				weight="medium"
 				className="pb-5"
 			>
 				{data.label}
 			</Typographie>
-			<Typographie variant="caption3" theme="gray" className="space-y-4">
+			<Typographie variant="caption4" theme="gray" className="space-y-4">
 				{LinkList}
 			</Typographie>
 		</div>
