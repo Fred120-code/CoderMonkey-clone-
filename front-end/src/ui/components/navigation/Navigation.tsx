@@ -1,9 +1,9 @@
-import Logo from "@/ui/design-system/logo/logo";
-import Container from "../container/container";
-import Typography from "@/ui/design-system/typography/typography";
-import Button from "@/ui/design-system/button/button";
+import Logo from "@/ui/design-system/logo/Logo";
+import Container from "../container/Container";
+import Typography from "@/ui/design-system/typography/Typography";
+import Button from "@/ui/design-system/button/Button";
 import Link from "next/link";
-import ActiveLink from "./active-link";
+import ActiveLink from "./Active-link";
 
 interface PropsNavigation {}
 

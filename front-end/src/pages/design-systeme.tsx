@@ -1,15 +1,15 @@
 //COMPOSANTS
-import Container from "@/ui/components/container/container";
-import Navigation from "@/ui/components/navigation/navigation";
+import Container from "@/ui/components/container/Container";
+import Navigation from "@/ui/components/navigation/Navigation";
 import Seo from "@/ui/components/seo/seo";
-import Layout from "@/ui/components/layout/layout";
+import Layout from "@/ui/components/layout/Layout";
 
 //DESING SYSTEM
-import Button from "@/ui/design-system/button/button";
-import Avatar from "@/ui/design-system/logo/avatar";
-import Logo from "@/ui/design-system/logo/logo";
-import Spinner from "@/ui/design-system/spinner/spinner";
-import Typography from "@/ui/design-system/typography/typography";
+import Button from "@/ui/design-system/button/Button";
+import Avatar from "@/ui/design-system/logo/Avatar";
+import Logo from "@/ui/design-system/logo/Logo";
+import Spinner from "@/ui/design-system/spinner/Spinner";
+import Typography from "@/ui/design-system/typography/Typography";
 
 //ICO
 import { RiUser6Fill } from "react-icons/ri";

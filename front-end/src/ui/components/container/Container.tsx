@@ -5,7 +5,7 @@ interface PropsContainer {
 	className?: string;
 }
 
-const container = ({ children, className }: PropsContainer) => {
+const Container = ({ children, className }: PropsContainer) => {
 	return (
 		<div className={clsx(className, " w-full px-5 lg:px-10 max-w-6xl mx-auto ")}>
 			{children}
@@ -13,4 +13,4 @@ const container = ({ children, className }: PropsContainer) => {
 	);
 };
 
-export default container;
+export default Container;

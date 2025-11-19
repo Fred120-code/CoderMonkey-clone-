@@ -1,5 +1,5 @@
-import Button from "@/ui/design-system/button/button";
-import { footerSocialNetworkLinks } from "./app-links";
+import Button from "@/ui/design-system/button/Button";
+import { footerSocialNetworkLinks } from "./App-links";
 import { uuid } from "uuidv4";
 import { RiFacebookBoxFill } from "react-icons/ri";
 import clsx from "clsx";
@@ -20,8 +20,8 @@ export const SocialNetworkButton = ({ className, theme = "accent" }: Props) => {
 					? socialNetwork.icon
 					: RiFacebookBoxFill,
 			}}
-            baseUrl={socialNetwork.baseUrl}
-            linkType={socialNetwork.type}
+			baseUrl={socialNetwork.baseUrl}
+			linkType={socialNetwork.type}
 		/>
 	));
 	return (

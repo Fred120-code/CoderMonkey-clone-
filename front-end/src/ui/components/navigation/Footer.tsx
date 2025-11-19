@@ -1,17 +1,17 @@
 //COMPOSANTS
-import Container from "../container/container";
-import { footerLink } from "./app-links";
-import ActiveLink from "./active-link";
+import Container from "../container/Container";
+import { footerLink } from "./App-links";
+import ActiveLink from "./Active-link";
 import { FooterLinks } from "@/types/app-links";
 
 //DESIGN SYSTEME
-import Typographie from "@/ui/design-system/typography/typography";
+import Typographie from "@/ui/design-system/typography/Typography";
 
 //IMPORT NEXTJS
 import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
 import { LinkType } from "@/lib/link-types";
-import { SocialNetworkButton } from "./social-network-button";
+import { SocialNetworkButton } from "./Social-network-button";
 
 const footer = () => {
 	const footerNavigationLinks = footerLink.map((element) => (

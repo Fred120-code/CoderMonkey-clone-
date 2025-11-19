@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { IconProps } from "@/types/iconProps";
-import Spinner from "../spinner/spinner";
+import Spinner from "../spinner/Spinner";
 import { LinkType, Linktypes } from "@/lib/link-types";
 import Link from "next/link";
 
@@ -102,7 +102,7 @@ const button = ({
 
 	const handleclick = () => {
 		if (action) {
-			action()
+			action();
 		}
 	};
 
