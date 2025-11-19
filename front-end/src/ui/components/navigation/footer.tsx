@@ -60,7 +60,7 @@ const footer = () => {
 						{`- DevFullstack`}
 					</Typographie>
 					<div>
-						<SocialNetworkButton theme="gray"/>
+						<SocialNetworkButton theme="gray" />
 					</div>
 				</div>
 			</Container>
@@ -79,7 +79,9 @@ const FooterLink = ({ data }: footerLink) => {
 				<ActiveLink href={element.baseUrl}> {element.label}</ActiveLink>
 			)}
 			{element.type === LinkType.EXTERNAL && (
-				<a href={element.baseUrl} target="_blank">{element.label}</a>
+				<a href={element.baseUrl} target="_blank">
+					{element.label}
+				</a>
 			)}
 		</div>
 	));
