@@ -7,7 +7,7 @@ import { FooterLinks } from "@/types/app-links";
 //DESIGN SYSTEME
 import Typographie from "@/ui/design-system/typography/Typography";
 
-//IMPORT NEXTJS
+//IMPORT NEXTJS ET UTILITAIRES
 import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
 import { LinkType } from "@/lib/link-types";

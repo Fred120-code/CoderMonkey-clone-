@@ -1,8 +1,12 @@
+//IMPORT NEXT
 import React from "react";
-import Container from "@/ui/components/container/Container";
 import Image from "next/image";
+
+//COMPOSANTS
+import Container from "@/ui/components/container/Container";
 import Typography from "@/ui/design-system/typography/Typography";
 import Button from "@/ui/design-system/button/Button";
+
 const HeroTopview = () => {
 	return (
 		<Container className="relative pt-40 pb-52 overflow-hidden">
