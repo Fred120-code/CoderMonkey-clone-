@@ -3,6 +3,7 @@ import HeroTopview from './heroTop/HeroTopview'
 import Featured from './featured/Featured'
 import CodeurSlack from './CodeurSlack/CodeurSlack'
 import CurrentCourse from './CurrentCourse/CurrentCourse'
+import HighLightList from './HighLightList/HighLightList'
 
 const LandingPageView = () => {
   return (
@@ -11,6 +12,7 @@ const LandingPageView = () => {
         <Featured/>
         <CodeurSlack/>
         <CurrentCourse/>
+        <HighLightList/>
     </>
   )
 }
