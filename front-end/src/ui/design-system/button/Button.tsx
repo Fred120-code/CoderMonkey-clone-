@@ -18,7 +18,7 @@ interface Props {
 	action?: Function;
 }
 
-const button = ({
+const Button = ({
 	size = "medium",
 	variants = "accent",
 	icon,
@@ -169,4 +169,4 @@ const button = ({
 	return buttonElement;
 };
 
-export default button;
+export default Button;

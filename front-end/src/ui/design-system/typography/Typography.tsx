@@ -24,7 +24,7 @@ interface Props {
 	children: React.ReactNode;
 }
 
-const typography = ({
+const Typography = ({
 	variant = "body-base",
 	components: Component = "div",
 	theme = "black",
@@ -115,4 +115,4 @@ const typography = ({
 	);
 };
 
-export default typography;
+export default Typography;
