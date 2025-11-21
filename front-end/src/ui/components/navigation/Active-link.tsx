@@ -8,7 +8,7 @@ interface PropsActiveLink {
 	children: React.ReactNode;
 }
 
-const activeLink = ({ href, children }: PropsActiveLink) => {
+const ActiveLink = ({ href, children }: PropsActiveLink) => {
 	const router = useRouter();
 	const isActive: boolean = useMemo(() => {
 		return router.pathname === href;
@@ -21,4 +21,4 @@ const activeLink = ({ href, children }: PropsActiveLink) => {
 	);
 };
 
-export default activeLink;
+export default ActiveLink;

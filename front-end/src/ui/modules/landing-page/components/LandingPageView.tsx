@@ -4,6 +4,7 @@ import Featured from './featured/Featured'
 import CodeurSlack from './CodeurSlack/CodeurSlack'
 import CurrentCourse from './CurrentCourse/CurrentCourse'
 import HighLightList from './HighLightList/HighLightList'
+import CallToAction from '@/ui/design-system/cta/CallToAction'
 
 const LandingPageView = () => {
   return (
@@ -13,6 +14,7 @@ const LandingPageView = () => {
         <CodeurSlack/>
         <CurrentCourse/>
         <HighLightList/>
+        <CallToAction/>
     </>
   )
 }

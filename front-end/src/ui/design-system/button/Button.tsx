@@ -6,7 +6,7 @@ import Link from "next/link";
 
 interface Props {
 	size?: "medium" | "large" | "small";
-	variants?: "accent" | "secondary" | "disabled" | "ico" | "outline";
+	variants?: "accent" | "secondary" | "disabled" | "ico" | "outline" | "success";
 	icon?: IconProps;
 	iconTheme?: "accent" | "secondary" | "gray";
 	iconPosition?: "left" | "right";
@@ -65,6 +65,9 @@ const Button = ({
 			variantStyle =
 				"bg-gray-400 rounded border border-gray-500 text-gray-600 cursor-not-allowed";
 			break;
+		case "success":
+			variantStyle =
+				"bg-secondary hover:bg-secondary-400 text-white rounded";
 
 		default:
 			break;
