@@ -4,6 +4,7 @@ import Typography from "@/ui/design-system/typography/Typography";
 import Image from "next/image";
 import Button from "@/ui/design-system/button/Button";
 import { RiArrowRightFill, RiArrowRightLine } from "react-icons/ri";
+import { SocialNetworkButton } from "@/ui/components/navigation/Social-network-button";
 
 interface FeaturesList {
 	imagePath: string;
@@ -86,7 +87,7 @@ const Featured = () => {
 				<div className=" col-span-7 grid grid-cols-2 gap-7">
 					{featuredList}
 				</div>
-				<div className=" col-span-5">
+				<div className=" col-span-5 flex flex-col justify-between gap-10">
 					<div>
 						<Typography
 							variant="h2"
@@ -115,7 +116,17 @@ const Featured = () => {
 							Commencer
 						</Button>
 					</div>
-					<div></div>
+					<div className="">
+						<Typography
+							variant="caption3"
+							theme="gray"
+							components="p"
+							className="mb-4"
+						>
+							Nos reseaux sociaux {""}
+						</Typography>
+						<SocialNetworkButton/>
+					</div>
 				</div>
 			</Container>
 		</div>
