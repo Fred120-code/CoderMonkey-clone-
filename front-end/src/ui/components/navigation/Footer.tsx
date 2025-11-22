@@ -54,10 +54,10 @@ const footer = () => {
 								href="https://github.com/Fred120-code"
 								target="_blank"
 							>
-								Joran Fred
+								Joran Fred 
 							</a>
 						}
-						{`- DevFullstack`}
+						{` Dev_Web_Fullstack`}
 					</Typographie>
 					<div>
 						<SocialNetworkButton theme="gray" />
