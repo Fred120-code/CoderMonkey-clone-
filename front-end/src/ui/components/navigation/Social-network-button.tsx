@@ -1,6 +1,6 @@
 import Button from "@/ui/design-system/button/Button";
 import { footerSocialNetworkLinks } from "./App-links";
-import { uuid } from "uuidv4";
+import { v4 as uuidv4 } from "uuid";
 import { RiFacebookBoxFill } from "react-icons/ri";
 import clsx from "clsx";
 
@@ -12,7 +12,7 @@ interface Props {
 export const SocialNetworkButton = ({ className, theme = "accent" }: Props) => {
 	const icoList = footerSocialNetworkLinks.map((socialNetwork) => (
 		<Button
-			key={uuid()}
+			key={uuidv4()}
 			variants="ico"
 			iconTheme={theme}
 			icon={{
