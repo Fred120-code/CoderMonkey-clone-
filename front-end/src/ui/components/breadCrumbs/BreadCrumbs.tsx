@@ -29,7 +29,7 @@ const BreadCrumbs = () => {
 					components="span"
 					className={clsx(
 						path != lastSegment ? "text-gray-600" : "text-gray",
-						" capitalize hover:text-gray animate"
+						"capitalize hover:text-gray animate"
 					)}
 				>
 					{path != "accueil" ? (
@@ -37,6 +37,7 @@ const BreadCrumbs = () => {
 					) : (
 						<RiHome3Line className="inline -mt-1" />
 					)}
+					
 				</Typography>
 				{path != lastSegment ||
 					(path != "accueil" && (

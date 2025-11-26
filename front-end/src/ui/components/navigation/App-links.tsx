@@ -32,17 +32,17 @@ const footerUsersLinks: PropsAppLinks[] = [
 	},
 	{
 		label: "Connexion",
-		baseUrl: "/#",
+		baseUrl: "/connexion",
 		type: "internal",
 	},
 	{
 		label: "Inscription",
-		baseUrl: "/#",
+		baseUrl: "/connexion/inscription",
 		type: "internal",
 	},
 	{
 		label: "Mot de passe oublier",
-		baseUrl: "/#",
+		baseUrl: "/connexion/mot-de-passe-perdu",
 		type: "internal",
 	},
 ];

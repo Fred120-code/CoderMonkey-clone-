@@ -39,7 +39,6 @@ const Typography = ({
 		case "display":
 			variantStyle = "text-8xl";
 			break;
-
 		case "h1":
 			variantStyle = "text-7xl";
 			break;

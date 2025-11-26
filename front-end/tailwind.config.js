@@ -39,7 +39,7 @@ module.exports = {
 				{
 					lineHeight: "120px",
 					letterSpacing: "-6px",
-					fontWeight: "500",
+					fontWeight: "600",
 				},
 			],
 			"7xl": [
@@ -79,7 +79,7 @@ module.exports = {
 				{
 					lineHeight: "34px",
 					letterSpacing: "-0.800000011920929px",
-					fontWeight: "500",
+					fontWeight: "600",
 				},
 			],
 			"2xl": [
@@ -87,7 +87,7 @@ module.exports = {
 				{
 					lineHeight: "30px",
 					letterSpacing: "-1px",
-					fontWeight: "400",
+					fontWeight: "600",
 				},
 			],
 			xl: [
@@ -95,7 +95,7 @@ module.exports = {
 				{
 					lineHeight: "30px",
 					letterSpacing: "-1px",
-					fontWeight: "400",
+					fontWeight: "500",
 				},
 			],
 			lg: [
@@ -103,7 +103,7 @@ module.exports = {
 				{
 					lineHeight: "30px",
 					letterSpacing: "-0.800000011920929px",
-					fontWeight: "400",
+					fontWeight: "500",
 				},
 			],
 			base: [

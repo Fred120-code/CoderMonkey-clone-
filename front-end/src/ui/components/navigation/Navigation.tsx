@@ -43,10 +43,18 @@ const navigation = ({}: PropsNavigation) => {
 						<ActiveLink href="/contacts">Contacts</ActiveLink>
 					</Typography>
 					<div className="flex items-center gap-2">
-						<Button size="small" variants="accent">
+						<Button
+							size="small"
+							variants="accent"
+							baseUrl="/connexion"
+						>
 							Connexion
 						</Button>
-						<Button size="small" variants="secondary">
+						<Button
+							size="small"
+							variants="secondary"
+							baseUrl="/connexion/inscription"
+						>
 							Rejoindre
 						</Button>
 					</div>

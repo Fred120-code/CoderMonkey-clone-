@@ -11,7 +11,7 @@ export default function Inscription() {
 				title="Inscription à la plateforme"
 				description="page d'inscription"
 			/>
-			<Layout isDisplayBreadcumbs={false}>
+			<Layout isDisplayBreadcumbs={true}>
                 <RegisterContainer/>
             </Layout>
 		</div>
