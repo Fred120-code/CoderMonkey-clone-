@@ -109,7 +109,7 @@ const Featured = () => {
 						</Typography>
 						<Button
 							variants="secondary"
-							baseUrl="/#"
+							baseUrl="/connexion/inscription"
 							icon={{ icon: RiArrowRightLine }}
 							iconPosition="right"
 						>

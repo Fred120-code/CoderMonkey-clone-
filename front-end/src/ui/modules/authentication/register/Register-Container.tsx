@@ -1,12 +1,21 @@
-import React from 'react'
-import RegisterView from './RegisterView'
+import { useForm, SubmitHandler } from "react-hook-form";
+import RegisterView from "./RegisterView";
+import { RegisterFormFielsType } from "@/types/form";
 
 const RegisterContainer = () => {
-  return (
-    <div>
-      <RegisterView/>
-    </div>
-  )
-}
+	const {
+		handleSubmit,
+		control,
+		formState: { errors },
+		register,
+		setError,
+		reset,
+	} = useForm<RegisterFormFielsType>();
+	return (
+		<div>
+			<RegisterView />
+		</div>
+	);
+};
 
-export default RegisterContainer
+export default RegisterContainer;

@@ -25,7 +25,7 @@ const HeroTopview = () => {
 					les plus fous et fais-toi des amis developpeurs
 				</Typography>
 				<div className="flex gap-4 pt-2.5">
-					<Button baseUrl="">Commencer</Button>
+					<Button baseUrl="/connexion/inscription">Commencer</Button>
 					<Button baseUrl="" variants="secondary">
 						En savoir plus
 					</Button>

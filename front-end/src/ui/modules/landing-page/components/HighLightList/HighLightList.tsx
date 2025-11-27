@@ -27,7 +27,7 @@ const HighLightList = () => {
 					</div>
 					<div className=" relative inline-block">
 						<Button
-							baseUrl="/#"
+							baseUrl="/connexion"
 							icon={{ icon: RiArrowRightLine }}
 							iconPosition="right"
 						>
@@ -46,16 +46,25 @@ const HighLightList = () => {
 			<div className="flex justify-center gap-24">
 				<div className="max-w-md space-y-7">
 					<Typography variant="h3" components="h2">
-                        Booste ta carrière de developpeur !
+						Booste ta carrière de developpeur !
 					</Typography>
 					<div className="space-y-3">
-						<ListPoint> Partage tes projets, obtient des feedbacks.</ListPoint>
-						<ListPoint> Connecte-toi, et alargie ton réseaux pro.</ListPoint>
-						<ListPoint> Reste inspiré et motivé avec notre communauté.</ListPoint>
+						<ListPoint>
+							{" "}
+							Partage tes projets, obtient des feedbacks.
+						</ListPoint>
+						<ListPoint>
+							{" "}
+							Connecte-toi, et alargie ton réseaux pro.
+						</ListPoint>
+						<ListPoint>
+							{" "}
+							Reste inspiré et motivé avec notre communauté.
+						</ListPoint>
 					</div>
 					<div className=" relative inline-block">
 						<Button
-							baseUrl="/#"
+							baseUrl="/connexion"
 							icon={{ icon: RiArrowRightLine }}
 							iconPosition="right"
 							variants="secondary"
