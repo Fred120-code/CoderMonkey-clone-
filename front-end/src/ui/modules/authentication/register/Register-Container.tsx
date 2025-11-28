@@ -1,8 +1,9 @@
-import { useForm, SubmitHandler } from "react-hook-form";
-import RegisterView from "./RegisterView";
+import { SubmitHandler, useForm } from "react-hook-form";
+import RegisterView  from "./RegisterView";
 import { RegisterFormFielsType } from "@/types/form";
 
 const RegisterContainer = () => {
+	const isLoading = false;
 	const {
 		handleSubmit,
 		control,
@@ -11,10 +12,24 @@ const RegisterContainer = () => {
 		setError,
 		reset,
 	} = useForm<RegisterFormFielsType>();
+
+	const onSubmit: SubmitHandler<RegisterFormFielsType> = async (formData) => {
+		console.log(formData);
+	};
+
 	return (
-		<div>
-			<RegisterView />
-		</div>
+		<>
+			<RegisterView
+				form={{
+					errors,
+					control,
+					register,
+					handleSubmit,
+					onSubmit,
+					isLoading,
+				}}
+			/>
+		</>
 	);
 };
 

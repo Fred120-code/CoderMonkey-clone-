@@ -1,8 +1,15 @@
+import { FromTypes } from '@/types/form';
 import React from 'react'
+interface Props {
+  form: FromTypes;
+}
 
-const RegisterForm = () => {
+const RegisterForm = ({form}: Props) => {
+  console.log("form", form)
   return (
-    <div>RegisterForm</div>
+    <div>
+      sdsds
+    </div>
   )
 }
 

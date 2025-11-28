@@ -13,7 +13,6 @@ const BreadCrumbs = () => {
 	const segment = asPath.split("/");
 	const lastSegment = segment[segment.length - 1];
 	segment[0] = "accueil";
-	console.log("segment:", segment);
 
 	const veiw = segment.map((path, index) => (
 		<div key={uuidv4()} className="flex items-center">
