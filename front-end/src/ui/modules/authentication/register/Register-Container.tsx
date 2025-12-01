@@ -14,7 +14,7 @@ const RegisterContainer = () => {
 	} = useForm<RegisterFormFielsType>();
 
 	const onSubmit: SubmitHandler<RegisterFormFielsType> = async (formData) => {
-		console.log(formData);
+		console.log( " formaData", formData);
 	};
 
 	return (

@@ -6,7 +6,13 @@ import Link from "next/link";
 
 interface Props {
 	size?: "medium" | "large" | "small";
-	variants?: "accent" | "secondary" | "disabled" | "ico" | "outline" | "success";
+	variants?:
+		| "accent"
+		| "secondary"
+		| "disabled"
+		| "ico"
+		| "outline"
+		| "success";
 	icon?: IconProps;
 	iconTheme?: "accent" | "secondary" | "gray";
 	iconPosition?: "left" | "right";
@@ -16,6 +22,8 @@ interface Props {
 	baseUrl?: string;
 	linkType?: Linktypes;
 	action?: Function;
+	type?: "button" | "submit";
+	fullWidth?: boolean;
 }
 
 const Button = ({
@@ -30,6 +38,8 @@ const Button = ({
 	baseUrl,
 	linkType = "internal",
 	action = () => {},
+	type = "button",
+	fullWidth = false,
 }: Props) => {
 	let variantStyle: string = "",
 		sizeStyle: string = "",
@@ -142,12 +152,15 @@ const Button = ({
 		<>
 			<div>
 				<button
-					type="button"
+					type={type}
+					disabled ={disabled}
 					onClick={handleclick}
 					className={clsx(
 						variantStyle,
 						sizeStyle,
 						icoSize,
+						isloading && "cursor-wait",
+						fullWidth && "w-full",
 						"relative animate"
 					)}
 				>
