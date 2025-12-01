@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Typography from "../typography/Typography";
 
 interface Props {
 	isLoading: boolean;
@@ -24,23 +25,32 @@ const Input = ({
 	isAutocompleted = false,
 }: Props) => {
 	return (
-		<>
+		<div className="space-y-2">
 			<input
 				type={type}
 				placeholder={placholder}
 				disabled={isLoading}
 				className={clsx(
-					"w-full p-4 font-light border border-gray-400 rounded focus:outline-none focus:ring-1 focus:ring-primary placeholder-gray-600"
+          isLoading && "cursor-not-allowed",
+					errors[id]
+						? " placeholder-alert-danger text-alert-danger"
+						: "placeholder-gray-600",
+					"w-full p-4 font-light border border-gray-400 rounded focus:outline-none focus:ring-1 focus:ring-primary "
 				)}
 				{...register(id, {
 					required: {
-						value: { required },
-						message: { errorMsg },
+						value:  required ,
+						message:  errorMsg ,
 					},
 				})}
 				autoComplete={isAutocompleted ? "on" : "off"}
 			/>
-		</>
+			{errors[id] && (
+				<Typography variant="caption4" components="div" theme="danger">
+					{errors[id]?.message}
+				</Typography>
+			)}
+		</div>
 	);
 };
 

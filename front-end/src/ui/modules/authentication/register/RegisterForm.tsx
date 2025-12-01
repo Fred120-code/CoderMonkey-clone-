@@ -40,7 +40,7 @@ const RegisterForm = ({ form }: Props) => {
 				errorMsg="tu dois renseigner ce champ"
 				id="how_did_hear"
 			/>
-			<Button isloading={isLoading} type="submit" fullWidth={true}>
+			<Button isloading={isLoading} disabled={isLoading} type="submit" fullWidth={true}>
 				{" "}
 				s'inscrire
 			</Button>
