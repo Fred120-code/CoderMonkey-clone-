@@ -1,5 +1,6 @@
 import { FromTypes } from "@/types/form";
 import Button from "@/ui/design-system/button/Button";
+import Input from "@/ui/design-system/forms/Input";
 
 interface Props {
 	form: FromTypes;
@@ -9,48 +10,40 @@ const RegisterForm = ({ form }: Props) => {
 	const { control, onSubmit, errors, isLoading, register, handleSubmit } =
 		form;
 
-	console.log("form", form);
-
 	return (
-		<form onSubmit={handleSubmit(onSubmit)}>
-			<input
+		<form onSubmit={handleSubmit(onSubmit)} className="pt-8 pb-5 space-y-4">
+			<Input
+				isLoading={isLoading}
+				placholder="Johndoe@gmail.com"
 				type="email"
-				placeholder="johndoe@gmail.com"
-				disabled={isLoading}
-				className=""
-				{...register("email", {
-					required: {
-						value: true,
-						message: "Ce champ est requis !",
-					},
-				})}
-				autoComplete="off"
+				register={register}
+				errors={errors}
+				errorMsg="tu dois renseigner ce champ"
+				id="email"
+				isAutocompleted={true}
 			/>
-			<input
+			<Input
+				isLoading={isLoading}
+				placholder="Mot de passe"
 				type="password"
-				placeholder="Mot de passe"
-				{...register("password", {
-					required: {
-						value: true,
-						message: "Ce champ est requis !",
-					},
-				})}
-				autoComplete="off"
+				register={register}
+				errors={errors}
+				errorMsg="tu dois renseigner ce champ"
+				id="password"
+				isAutocompleted={false}
 			/>
-			<input
-				type="text"
-				placeholder="Comment nous avez-vous connu ...."
-				disabled={isLoading}
-				className=""
-				{...register("how_did_hear", {
-					required: {
-						value: true,
-						message: "Ce champ est requis !",
-					},
-				})}
-				autoComplete="off"
+			<Input
+				isLoading={isLoading}
+				placholder="Comment nous as-tu connus ?"
+				register={register}
+				errors={errors}
+				errorMsg="tu dois renseigner ce champ"
+				id="how_did_hear"
 			/>
-      <Button isloading={isLoading} type="submit" fullWidth={true}> s'inscrire</Button>
+			<Button isloading={isLoading} type="submit" fullWidth={true}>
+				{" "}
+				s'inscrire
+			</Button>
 		</form>
 	);
 };
