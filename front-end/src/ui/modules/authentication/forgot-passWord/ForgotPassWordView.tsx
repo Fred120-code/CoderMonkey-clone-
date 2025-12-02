@@ -1,13 +1,18 @@
-import Container from '@/ui/components/container/Container';
-import Box from '@/ui/design-system/box/Box';
-import Typography from '@/ui/design-system/typography/Typography';
-import Link from 'next/link';
-import React from 'react'
-import Image from 'next/image';
-import ForgetPwForm from './ForgetPwForm';
+import Container from "@/ui/components/container/Container";
+import Box from "@/ui/design-system/box/Box";
+import Typography from "@/ui/design-system/typography/Typography";
+import Link from "next/link";
+import React from "react";
+import Image from "next/image";
+import ForgetPwForm from "./ForgetPwForm";
+import { FromTypes } from "@/types/form";
 
-const ForgotPassWordView = () => {
-  return (
+interface Props {
+	form: FromTypes;
+}
+
+const ForgotPassWordView = ({ form }: Props) => {
+	return (
 		<Container className="grid grid-cols-2 gap-20 mb-32">
 			<div className="flex items-center">
 				<div className="relative w-full h-[531px]">
@@ -35,11 +40,11 @@ const ForgotPassWordView = () => {
 							</Typography>
 						</div>
 					</div>
-					<ForgetPwForm />
+					<ForgetPwForm form={form} />
 				</Box>
 			</div>
 		</Container>
-  );
-}
+	);
+};
 
-export default ForgotPassWordView
+export default ForgotPassWordView;

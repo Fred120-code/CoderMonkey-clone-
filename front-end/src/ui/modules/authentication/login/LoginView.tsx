@@ -5,8 +5,13 @@ import Link from 'next/link';
 import React from 'react'
 import Image from 'next/image';
 import LoginForm from './LoginForm';
+import { FromTypes } from '@/types/form';
 
-const LoginView = () => {
+interface Props {
+	form: FromTypes;
+}
+
+const LoginView = ({form}: Props) => {
   return (
 		<Container className="grid grid-cols-2 gap-20 mb-32">
 			<div className="flex items-center">
@@ -42,7 +47,7 @@ const LoginView = () => {
 							</Typography>
 						</div>
 					</div>
-					<LoginForm/>
+					<LoginForm form={form}/>
 				</Box>
 			</div>
 		</Container>
