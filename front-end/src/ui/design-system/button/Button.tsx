@@ -153,7 +153,7 @@ const Button = ({
 			<div>
 				<button
 					type={type}
-					disabled ={disabled}
+					disabled ={disabled || isloading ? true : false}
 					onClick={handleclick}
 					className={clsx(
 						variantStyle,

@@ -20,24 +20,6 @@ const ForgetPwForm = ({ form }: Props) => {
 				id="email"
 				isAutocompleted={true}
 			/>
-			<Input
-				isLoading={isLoading}
-				placholder="Mot de passe"
-				type="password"
-				register={register}
-				errors={errors}
-				errorMsg="tu dois renseigner ce champ"
-				id="password"
-				isAutocompleted={false}
-			/>
-			<Input
-				isLoading={isLoading}
-				placholder="Comment nous as-tu connus ?"
-				register={register}
-				errors={errors}
-				errorMsg="tu dois renseigner ce champ"
-				id="how_did_hear"
-			/>
 			<Button
 				isloading={isLoading}
 				disabled={isLoading}
@@ -45,7 +27,7 @@ const ForgetPwForm = ({ form }: Props) => {
 				fullWidth={true}
 			>
 				{" "}
-				s'inscrire
+        Envoyer
 			</Button>
 		</form>
 	);
