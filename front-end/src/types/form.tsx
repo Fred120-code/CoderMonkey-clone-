@@ -1,11 +1,11 @@
 export interface RegisterFormFielsType {
 	email: string;
-	passWord: string;
+	password: string;
 	how_did_hear: string;
 }
 export interface LoginFormFielsType {
 	email: string;
-	passWord: string;
+	password: string;
 }
 
 export interface FromTypes {
