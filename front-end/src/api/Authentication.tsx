@@ -2,7 +2,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/config/firebase-config";
 import { FirebaseError } from "firebase/app";
 
-const Authentication = async (email: string, password: string) => {
+const firebaseCreateUser = async (email: string, password: string) => {
 	try {
 		const userCredential = await createUserWithEmailAndPassword(
 			auth,
@@ -21,4 +21,4 @@ const Authentication = async (email: string, password: string) => {
 	}
 };
 
-export default Authentication;
+export default firebaseCreateUser;
