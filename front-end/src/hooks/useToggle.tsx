@@ -1,13 +1,16 @@
 import { useState } from "react";
 
-const useToggle = () => {
-    const [value, setValue] = useState<boolean>(false);
+interface Props {
+	initial?: boolean
+}
 
-    return {
+const useToggle = ({ initial = false }: Props = {}) => {
+	const [value, setValue] = useState<boolean>(initial);
+
+	return {
 		value,
 		setValue,
 	};
-
 };
 
 export default useToggle;

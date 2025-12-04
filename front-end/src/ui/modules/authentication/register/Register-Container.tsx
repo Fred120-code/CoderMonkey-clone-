@@ -1,22 +1,27 @@
 //IMPORT REACT
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useState } from "react";
+import { toast } from "react-toastify";
 
 //COMPOSANTS
 import RegisterView from "./RegisterView";
+import Button from "@/ui/design-system/button/Button";
 
 //TYPEs
 import { RegisterFormFielsType } from "@/types/form";
+
+//API
 import firebaseCreateUser from "@/api/Authentication";
 
-import { toast } from "react-toastify";
+//HOOK
 import useToggle from "@/hooks/useToggle";
-import Button from "@/ui/design-system/button/Button";
 
 const RegisterContainer = () => {
+	
+	const { value: isLoading, setValue: setIsloading } = useToggle({
+		initial: true,
+	});
 
-	const { value: isLoading, setValue: setIsloading} = useToggle()
-	console.log(isLoading)
+	console.log(isLoading);
 
 	const {
 		handleSubmit,
@@ -32,7 +37,6 @@ const RegisterContainer = () => {
 		password,
 		how_did_hear,
 	}: RegisterFormFielsType) => {
-
 		const { error, data } = await firebaseCreateUser(email, password);
 
 		if (error) {
@@ -45,7 +49,6 @@ const RegisterContainer = () => {
 		setIsloading(false);
 		console.log(data);
 	};
-
 
 	const onSubmit: SubmitHandler<RegisterFormFielsType> = async (formData) => {
 		setIsloading(true);
@@ -67,7 +70,7 @@ const RegisterContainer = () => {
 
 	return (
 		<>
-		<Button action={()=> setIsloading(!isLoading)}>Click Me</Button>
+			<Button action={() => setIsloading(!isLoading)}>Click Me</Button>
 			<RegisterView
 				form={{
 					errors,

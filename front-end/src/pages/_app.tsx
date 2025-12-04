@@ -7,7 +7,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<ToastContainer position="top-center" autoClose={8000} transition={Flip}/>
-			<Component {...pageProps} />;
+			<Component {...pageProps} />
 		</>
 	);
 }
