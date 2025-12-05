@@ -13,9 +13,9 @@ const navigation = ({}: PropsNavigation) => {
 			<Container className="py-1.5 flex justify-between items-center gap-7">
 				<Link href="/">
 					<div className="flex items-center gap-2">
-						<Logo size="small" />
+						<Logo size="very-small" />
 						<div className="flex flex-col">
-							<div className="text-gray font-extrabold text-[24px]">
+							<div className="text-gray font-extrabold text-[20px]">
 								Codeurs Monkeys
 							</div>
 							<Typography
@@ -31,7 +31,7 @@ const navigation = ({}: PropsNavigation) => {
 				</Link>
 				<div className="flex items-center gap-7">
 					<Typography
-						variant="caption3"
+						variant="caption4"
 						components="div"
 						className="flex items-center gap-7"
 					>

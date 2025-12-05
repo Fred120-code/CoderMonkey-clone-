@@ -11,11 +11,11 @@ const HeroTopview = () => {
 	return (
 		<Container className="relative pt-40 pb-52 overflow-hidden">
 			<div className="w-full max-w-2xl space-y-5">
-				<Typography variant="h1" className="max-w-lg" components="h1">
+				<Typography variant="h1" className="max-w-lg" components="h3">
 					Rejoins les singes codeurs !
 				</Typography>
 				<Typography
-					variant="body-lg"
+					variant="body-base"
 					className="max-w-xl"
 					components="p"
 					theme="gray"
@@ -25,8 +25,8 @@ const HeroTopview = () => {
 					les plus fous et fais-toi des amis developpeurs
 				</Typography>
 				<div className="flex gap-4 pt-2.5">
-					<Button baseUrl="/connexion/inscription">Commencer</Button>
-					<Button baseUrl="" variants="secondary">
+					<Button baseUrl="/connexion/inscription" size="small">Commencer</Button>
+					<Button baseUrl="" variants="secondary" size="small">
 						En savoir plus
 					</Button>
 				</div>
@@ -34,8 +34,8 @@ const HeroTopview = () => {
 			<Image
 				src="/assets/svg/rocket.svg"
 				alt="rocket"
-				width={811}
-				height={586}
+				width={800}
+				height={550}
 				className=" absolute right-0 top-0 z-0"
 			/>
 		</Container>

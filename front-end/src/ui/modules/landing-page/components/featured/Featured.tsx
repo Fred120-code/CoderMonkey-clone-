@@ -97,7 +97,7 @@ const Featured = () => {
 							Deviens un développeur web compétent
 						</Typography>
 						<Typography
-							variant="body-lg"
+							variant="body-base"
 							theme="gray"
 							components="p"
 							className="mb-8"

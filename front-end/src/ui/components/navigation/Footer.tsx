@@ -23,7 +23,7 @@ const footer = () => {
 			<Container className="flex justify-between pt-11 ">
 				<div className="flex items-center flex-col gap-1">
 					<Typographie
-						variant="caption1"
+						variant="caption3"
 						theme="white"
 						weight="medium"
 					>

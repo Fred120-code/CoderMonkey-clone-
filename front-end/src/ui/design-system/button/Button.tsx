@@ -89,7 +89,7 @@ const Button = ({
 
 	switch (size) {
 		case "small":
-			sizeStyle = `text-caption3 font-medium  ${
+			sizeStyle = `text-caption4 font-medium  ${
 				variants === "ico"
 					? "flex items-center justify-center w-[40px] h-[40px]"
 					: "px-[14px] py-[12px]"

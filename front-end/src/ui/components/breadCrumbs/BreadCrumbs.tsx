@@ -24,7 +24,7 @@ const BreadCrumbs = () => {
 				}
 			>
 				<Typography
-					variant="caption3"
+					variant="caption4"
 					components="span"
 					className={clsx(
 						path != lastSegment ? "text-gray-600" : "text-gray",
