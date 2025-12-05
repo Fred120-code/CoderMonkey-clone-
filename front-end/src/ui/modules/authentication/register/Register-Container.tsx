@@ -9,13 +9,12 @@ import RegisterView from "./RegisterView";
 import { RegisterFormFielsType } from "@/types/form";
 
 //API
-import firebaseCreateUser from "@/api/Authentication";
+import { firebaseCreateUser } from "@/api/Authentication";
 
 //HOOK
 import useToggle from "@/hooks/useToggle";
 
 const RegisterContainer = () => {
-	
 	const { value: isLoading, setValue: setIsloading } = useToggle({
 		initial: false,
 	});

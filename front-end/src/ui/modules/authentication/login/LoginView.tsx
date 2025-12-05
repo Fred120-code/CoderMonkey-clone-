@@ -1,18 +1,18 @@
-import Container from "@/ui/components/container/Container";
-import Box from "@/ui/design-system/box/Box";
-import Typography from "@/ui/design-system/typography/Typography";
-import Link from "next/link";
-import React from "react";
-import Image from "next/image";
-import LoginForm from "./LoginForm";
-import { FromTypes } from "@/types/form";
+import Container from '@/ui/components/container/Container';
+import Box from '@/ui/design-system/box/Box';
+import Typography from '@/ui/design-system/typography/Typography';
+import Link from 'next/link';
+import React from 'react'
+import Image from 'next/image';
+import LoginForm from './LoginForm';
+import { FromTypes } from '@/types/form';
 
 interface Props {
 	form: FromTypes;
 }
 
-const LoginView = ({ form }: Props) => {
-	return (
+const LoginView = ({form}: Props) => {
+  return (
 		<Container className="grid grid-cols-2 gap-20 mb-32">
 			<div className="flex items-center">
 				<div className="relative w-full h-[531px]">
@@ -43,25 +43,19 @@ const LoginView = ({ form }: Props) => {
 								components="span"
 								theme="primary"
 							>
-								<Link href="/connexion/inscription">
-									S'inscrire
-								</Link>
+								<Link href="/connexion/inscription">S'inscrire</Link>
 							</Typography>
 						</div>
 					</div>
-					<LoginForm form={form} />
-					<Typography variant="caption4" theme="primary">
-						<Link
-							href="/connexion/mot-de-passe-perdu"
-							className="flex justify-center"
-						>
-							Mot de passe perdu ?
-						</Link>
+					<LoginForm form={form}/>
+					<Typography variant='caption4' theme='primary'>
+
+						<Link href="/connexion/mot-de-passe-perdu" className='flex justify-center'>Mot de passe perdu ?</Link>
 					</Typography>
 				</Box>
 			</div>
 		</Container>
-	);
-};
+  );
+}
 
-export default LoginView;
+export default LoginView

@@ -1,9 +1,13 @@
 import { useState } from "react";
 import ForgotPassWordView from "./ForgotPassWordView";
-import { RegisterFormFielsType } from "@/types/form";
+import { ForgotPasswordFielsType, RegisterFormFielsType } from "@/types/form";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { firebaseSendPasswordResetEmailUser } from "@/api/Authentication";
+import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 
 const ForgotPWContainer = () => {
+	const router = useRouter()
 	const [isLoading, setIsloading] = useState<boolean>(false);
 
 	const {
@@ -15,8 +19,23 @@ const ForgotPWContainer = () => {
 		reset,
 	} = useForm<RegisterFormFielsType>();
 
+	const handlePasswordReset = async ({ email }: ForgotPasswordFielsType) => {
+		const {error} = await firebaseSendPasswordResetEmailUser(email)
+
+		if (error) {
+			toast.error(error.message)
+			setIsloading(false)
+			return;
+		}
+
+		toast.success(`un email a été envoyer à l'adresse : ${email}`)
+		setIsloading(false)
+		router.push("/connexion")
+		
+	};
+
 	const onSubmit: SubmitHandler<RegisterFormFielsType> = async (formData) => {
-		console.log("formData", formData);
+		handlePasswordReset(formData)
 		setIsloading(true);
 	};
 

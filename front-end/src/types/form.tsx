@@ -8,6 +8,11 @@ export interface LoginFormFielsType {
 	password: string;
 }
 
+export interface ForgotPasswordFielsType {
+	email: string;
+}
+
+
 export interface FromTypes {
 	control: any;
 	onSubmit: any;
