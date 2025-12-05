@@ -4,7 +4,6 @@ import { toast } from "react-toastify";
 
 //COMPOSANTS
 import RegisterView from "./RegisterView";
-import Button from "@/ui/design-system/button/Button";
 
 //TYPEs
 import { RegisterFormFielsType } from "@/types/form";
@@ -18,7 +17,7 @@ import useToggle from "@/hooks/useToggle";
 const RegisterContainer = () => {
 	
 	const { value: isLoading, setValue: setIsloading } = useToggle({
-		initial: true,
+		initial: false,
 	});
 
 	console.log(isLoading);
@@ -70,7 +69,6 @@ const RegisterContainer = () => {
 
 	return (
 		<>
-			<Button action={() => setIsloading(!isLoading)}>Click Me</Button>
 			<RegisterView
 				form={{
 					errors,
