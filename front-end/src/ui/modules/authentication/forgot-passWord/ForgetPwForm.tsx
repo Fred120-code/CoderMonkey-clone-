@@ -25,6 +25,7 @@ const ForgetPwForm = ({ form }: Props) => {
 				disabled={isLoading}
 				type="submit"
 				fullWidth={true}
+				size="small"
 			>
 				{" "}
         Envoyer

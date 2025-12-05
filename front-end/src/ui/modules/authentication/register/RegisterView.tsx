@@ -14,7 +14,7 @@ const RegisterView = ({ form }: Props) => {
 	return (
 		<Container className="grid grid-cols-2 gap-20 mb-32">
 			<div className="flex items-center">
-				<div className="relative w-full h-[531px]">
+				<div className="relative w-full h-[500px]">
 					<Image
 						fill
 						src="/assets/images/character-1.png"
@@ -26,7 +26,7 @@ const RegisterView = ({ form }: Props) => {
 			<div className="flex items-center">
 				<Box padding_y="py-5">
 					<div className="flex justify-between items-center">
-						<Typography variant="h5" components="h1">
+						<Typography variant="lead" components="h1">
 							Inscription
 						</Typography>
 						<div className="flex items-center gap-3">

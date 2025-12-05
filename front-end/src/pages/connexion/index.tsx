@@ -8,7 +8,7 @@ export default function Connexion() {
 	return (
 		<div>
 			<Seo title="Conexion à la plateforme" description="page de connexion" />
-			<Layout isDisplayBreadcumbs={true}>
+			<Layout isDisplayBreadcumbs={true} withsidebar = {false}>
                 <LoginContainer/>
 			</Layout>
 		</div>

@@ -11,9 +11,9 @@ export default function ForgotPassWord() {
 				title="Recuparetion du mot de passe"
 				description="page de recuperation du mot de passe"
 			/>
-			<Layout isDisplayBreadcumbs={true}>
-                <ForgotPWContainer/>
-            </Layout>
+			<Layout isDisplayBreadcumbs={true} withsidebar={false}>
+				<ForgotPWContainer />
+			</Layout>
 		</div>
 	);
 }
