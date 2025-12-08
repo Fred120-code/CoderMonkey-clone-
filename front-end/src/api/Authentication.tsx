@@ -1,3 +1,4 @@
+//FONCTIONS FIREBASE
 import {
 	createUserWithEmailAndPassword,
 	signInWithEmailAndPassword,
