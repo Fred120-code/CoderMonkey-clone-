@@ -13,6 +13,7 @@ import { firebaseCreateUser } from "@/api/Authentication";
 
 //HOOK
 import useToggle from "@/hooks/useToggle";
+import { FireStoreUpdateDoc } from "@/api/FireStore";
 
 const RegisterContainer = () => {
 	const { value: isLoading, setValue: setIsloading } = useToggle({
@@ -30,6 +31,26 @@ const RegisterContainer = () => {
 		reset,
 	} = useForm<RegisterFormFielsType>();
 
+	const handleCreateUserDocument = async (
+		collectionName: string,
+		documentId: string,
+		data: object
+	) => {
+		const { error } = await FireStoreUpdateDoc(
+			collectionName,
+			documentId,
+			data
+		);
+
+		if (error) {
+			toast.error(error.message);
+			setIsloading(false);
+			reset();
+		}
+
+		toast.success("");
+	};
+
 	const handleCreateUserAuthentication = async ({
 		email,
 		password,
@@ -43,9 +64,17 @@ const RegisterContainer = () => {
 			return;
 		}
 
-		toast.success("Bienvenue sur l'app des singes codeur");
-		setIsloading(false);
-		console.log(data);
+		const userDocumentData= {
+			email:email,
+			how_did_hear:how_did_hear,
+			uuid:data.uid,
+			creationDate: new Date()
+		}
+
+		handleCreateUserDocument("users", data.uid, userDocumentData)
+		// toast.success("Bienvenue sur l'app des singes codeur");
+		// setIsloading(false);
+		// console.log(data);
 	};
 
 	const onSubmit: SubmitHandler<RegisterFormFielsType> = async (formData) => {
