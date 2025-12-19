@@ -9,7 +9,7 @@ import RegisterView from "./RegisterView";
 import { RegisterFormFielsType } from "@/types/form";
 
 //API
-import { firebaseCreateUser } from "@/api/Authentication";
+import { firebaseCreateUser, sendEmailVerificationUser } from "@/api/Authentication";
 
 //HOOK
 import useToggle from "@/hooks/useToggle";
@@ -51,6 +51,7 @@ const RegisterContainer = () => {
 		toast.success("Bienvenue sur l'app des singes codeurs");
 		setIsloading(false);
 		reset();
+		sendEmailVerificationUser()
 	};
 
 	const handleCreateUserAuthentication = async ({

@@ -83,7 +83,7 @@ export const firebaseSendPasswordResetEmailUser = async (email: string) => {
 
 
 //permet d'envoyer un email de confirmation
-export const sendEmailVerificatiob = async () => {
+export const sendEmailVerificationUser = async () => {
 	if (auth.currentUser) {
 		try {
 			await sendEmailVerification(auth.currentUser);
