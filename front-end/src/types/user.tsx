@@ -7,7 +7,7 @@ export interface UserInterface{
     emailVerified: boolean,
     phoneNumber: string | null,
     photoURL: string | null,
-    useDocument?: UserDocument
+    userDocument?: UserDocument
 }
 
 
