@@ -20,7 +20,6 @@ const RegisterContainer = () => {
 		initial: false,
 	});
 
-	console.log(isLoading);
 
 	const {
 		handleSubmit,
@@ -82,8 +81,6 @@ const RegisterContainer = () => {
 
 	const onSubmit: SubmitHandler<RegisterFormFielsType> = async (formData) => {
 		setIsloading(true);
-		console.log(formData);
-
 		const { password } = formData;
 
 		if (password.length <= 5) {

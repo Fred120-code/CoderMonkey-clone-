@@ -1,7 +1,6 @@
-import { auth } from "@/config/firebase-config";
 import { UserDocument } from "@/types/user";
 import { createContext, useContext } from "react";
-import { useFirebaseAuth } from "./useFirebaseAuth";
+import  useFirebaseAuth  from "../hooks/useFirebaseAuth";
 
 const init = {
 	uid: "",
@@ -22,7 +21,7 @@ interface Props {
 	children: React.ReactNode;
 }
 
-export function authUserProvider({ children }: Props) {
+export function AuthUserProvider({ children }: Props) {
 	const auth = useFirebaseAuth();
 	return (
 		<authUserContext.Provider

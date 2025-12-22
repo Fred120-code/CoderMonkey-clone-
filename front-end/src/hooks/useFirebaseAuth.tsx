@@ -4,7 +4,7 @@ import { onAuthStateChanged, User } from "firebase/auth";
 import { doc, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from "react";
 
-export const useFirebaseAuth = () => {
+export default function useFirebaseAuth() {
 	const [authUser, setAuthUser] = useState<UserInterface | null>(null);
 	const [authUserLoading, setAuhtUserLoading] = useState<boolean>(true);
 
@@ -48,10 +48,10 @@ export const useFirebaseAuth = () => {
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, autoStatechanged);
 		return () => unsubscribe();
-	});
+	}, []);
 
 	return {
 		authUser,
 		authUserLoading,
 	};
-};
+}

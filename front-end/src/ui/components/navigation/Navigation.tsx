@@ -4,10 +4,16 @@ import Typography from "@/ui/design-system/typography/Typography";
 import Button from "@/ui/design-system/button/Button";
 import Link from "next/link";
 import ActiveLink from "./Active-link";
+import { useAuth } from "@/context/AuthUserContext";
 
 interface PropsNavigation {}
 
 const navigation = ({}: PropsNavigation) => {
+
+	const {authUser, authUserLoading} = useAuth()
+	console.log("auth", authUser);
+	console.log("authUserLoading", authUserLoading);
+	
 	return (
 		<div className="border-b-2 border-gray-400">
 			<Container className="py-1.5 flex justify-between items-center gap-7">
