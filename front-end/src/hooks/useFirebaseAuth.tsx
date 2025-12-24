@@ -1,12 +1,16 @@
-import { auth, db } from "@/config/firebase-config";
-import { UserDocument, UserInterface } from "@/types/user";
+import { useEffect, useState } from "react";
+
+//IMPORT FIREBASE
 import { onAuthStateChanged, User } from "firebase/auth";
 import { doc, onSnapshot } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { auth, db } from "@/config/firebase-config";
+
+//TYPE
+import { UserDocument, UserInterface } from "@/types/user";
 
 export default function useFirebaseAuth() {
 	const [authUser, setAuthUser] = useState<UserInterface | null>(null);
-	const [authUserLoading, setAuhtUserLoading] = useState<boolean>(true);
+	const [authUserLoading, setAuhtUserLoading] = useState<boolean>(true) ;
 
 	//formatage de l'utilisateur firebase
 	const formatAuthUser = (user: UserInterface) => ({
@@ -18,7 +22,7 @@ export default function useFirebaseAuth() {
 		photoURL: user.photoURL,
 	});
 
-	//recuperation du document firestore
+	//recuperation du document firestore en temp réel
 	const getUserDocument = async (user: UserInterface) => {
 		if (auth.currentUser) {
 			const documentRef = doc(db, "users", auth.currentUser.uid);
@@ -28,6 +32,8 @@ export default function useFirebaseAuth() {
 				if (doc.exists()) {
 					compactUser.userDocument = doc.data() as UserDocument;
 				}
+				setAuthUser(compactUser);
+				setAuhtUserLoading(false);
 			});
 		}
 	};

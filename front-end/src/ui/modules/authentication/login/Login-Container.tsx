@@ -7,35 +7,15 @@ import LoginView from "./LoginView";
 
 import { LoginFormFielsType } from "@/types/form";
 
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "@/config/firebase-config";
-
 import useToggle from "@/hooks/useToggle";
 
 import { firebaseSignInUser } from "@/api/Authentication";
-
-
 
 const LoginContainer = () => {
 	const router = useRouter();
 	const { value: isLoading, setValue: setIsloading } = useToggle({
 		initial: false,
 	});
-
-	useEffect(() => {
-		onAuthStateChanged(auth, (user) => {
-			if (user) {
-				// User is signed in, see docs for a list of available properties
-				// https://firebase.google.com/docs/reference/js/auth.user
-				const uid = user.uid;
-				// ...
-			} else {
-				console.log("Aucun utlisateur connecté");
-				// User is signed out
-				// ...
-			}
-		});
-	}, []);
 
 	const {
 		handleSubmit,
@@ -60,6 +40,7 @@ const LoginContainer = () => {
 
 		toast.success("Bon retour");
 		setIsloading(false);
+		reset();
 		router.push("/mon-espace");
 	};
 

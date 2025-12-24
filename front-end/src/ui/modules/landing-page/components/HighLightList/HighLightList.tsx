@@ -9,6 +9,21 @@ import {
 	RiCheckboxCircleLine,
 } from "react-icons/ri";
 
+interface Props {
+	children: React.ReactNode;
+}
+
+const ListPoint = ({ children }: Props) => {
+	return (
+		<div className="flex items-start gap-3">
+			<RiCheckboxCircleLine size={24} className="mt-1 text-secondary" />
+			<Typography variant="body-lg" components="span">
+				{children}
+			</Typography>
+		</div>
+	);
+};
+
 const HighLightList = () => {
 	return (
 		<Container className="py-24 space-y-10">
@@ -83,17 +98,3 @@ const HighLightList = () => {
 
 export default HighLightList;
 
-interface Props {
-	children: React.ReactNode;
-}
-
-const ListPoint = ({ children }: Props) => {
-	return (
-		<div className="flex items-start gap-3">
-			<RiCheckboxCircleLine size={24} className="mt-1 text-secondary" />
-			<Typography variant="body-lg" components="span">
-				{children}
-			</Typography>
-		</div>
-	);
-};

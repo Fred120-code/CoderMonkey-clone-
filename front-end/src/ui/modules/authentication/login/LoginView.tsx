@@ -1,10 +1,12 @@
 import Container from '@/ui/components/container/Container';
 import Box from '@/ui/design-system/box/Box';
 import Typography from '@/ui/design-system/typography/Typography';
+import LoginForm from './LoginForm';
+
 import Link from 'next/link';
 import React from 'react'
 import Image from 'next/image';
-import LoginForm from './LoginForm';
+
 import { FromTypes } from '@/types/form';
 
 interface Props {
