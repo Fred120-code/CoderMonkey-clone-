@@ -74,9 +74,6 @@ const RegisterContainer = () => {
 		}
 
 		handleCreateUserDocument("users", data.uid, userDocumentData)
-		// toast.success("Bienvenue sur l'app des singes codeur");
-		// setIsloading(false);
-		// console.log(data);
 	};
 
 	const onSubmit: SubmitHandler<RegisterFormFielsType> = async (formData) => {

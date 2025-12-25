@@ -1,63 +1,67 @@
-import { useEffect, useState } from "react";
-
-//IMPORT FIREBASE
+import { useEffect, useRef, useState } from "react";
 import { onAuthStateChanged, User } from "firebase/auth";
-import { doc, onSnapshot } from "firebase/firestore";
+import { doc, onSnapshot, Unsubscribe } from "firebase/firestore";
 import { auth, db } from "@/config/firebase-config";
-
-//TYPE
 import { UserDocument, UserInterface } from "@/types/user";
 
 export default function useFirebaseAuth() {
 	const [authUser, setAuthUser] = useState<UserInterface | null>(null);
-	const [authUserLoading, setAuhtUserLoading] = useState<boolean>(true) ;
+	const [authUserLoading, setAuthUserLoading] = useState(true);
 
-	//formatage de l'utilisateur firebase
-	const formatAuthUser = (user: UserInterface) => ({
+	const unsubscribeRef = useRef<Unsubscribe | null>(null);
+
+	const formatAuthUser = (user: User): UserInterface => ({
 		uid: user.uid,
 		email: user.email,
 		displayName: user.displayName,
 		emailVerified: user.emailVerified,
 		phoneNumber: user.phoneNumber,
 		photoURL: user.photoURL,
+		userDocument: undefined,
 	});
 
-	//recuperation du document firestore en temp réel
-	const getUserDocument = async (user: UserInterface) => {
-		if (auth.currentUser) {
-			const documentRef = doc(db, "users", auth.currentUser.uid);
-			const compactUser = user;
+	const subscribeToUserDocument = (user: UserInterface) => {
+		if (unsubscribeRef.current) unsubscribeRef.current();
 
-			onSnapshot(documentRef, async (doc) => {
-				if (doc.exists()) {
-					compactUser.userDocument = doc.data() as UserDocument;
-				}
-				setAuthUser(compactUser);
-				setAuhtUserLoading(false);
-			});
-		}
-	};
+		const ref = doc(db, "users", user.uid);
 
-	//ecoute des changement d'authentification
-	const autoStatechanged = async (authState: UserInterface | User | null) => {
-		if (!authState) {
-			setAuthUser(null);
-			setAuhtUserLoading(false);
-			return;
-		}
-
-		setAuhtUserLoading(true);
-		const formattedUser = formatAuthUser(authState);
-		await getUserDocument(formattedUser);
+		unsubscribeRef.current = onSnapshot(
+			ref,
+			(snapshot) => {
+				setAuthUser({
+					...user,
+					userDocument: snapshot.exists()
+						? (snapshot.data() as UserDocument)
+						: undefined,
+				});
+				setAuthUserLoading(false);
+			},
+			(error) => {
+				console.error("Firestore error:", error);
+				setAuthUserLoading(false);
+			}
+		);
 	};
 
 	useEffect(() => {
-		const unsubscribe = onAuthStateChanged(auth, autoStatechanged);
-		return () => unsubscribe();
+		const unsubscribeAuth = onAuthStateChanged(auth, (firebaseUser) => {
+			if (!firebaseUser) {
+				setAuthUser(null);
+				setAuthUserLoading(false);
+				if (unsubscribeRef.current) unsubscribeRef.current();
+				return;
+			}
+
+			setAuthUserLoading(true);
+			const formattedUser = formatAuthUser(firebaseUser);
+			subscribeToUserDocument(formattedUser);
+		});
+
+		return () => {
+			unsubscribeAuth();
+			if (unsubscribeRef.current) unsubscribeRef.current();
+		};
 	}, []);
 
-	return {
-		authUser,
-		authUserLoading,
-	};
+	return { authUser, authUserLoading };
 }
