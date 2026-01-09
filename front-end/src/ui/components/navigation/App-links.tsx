@@ -27,7 +27,7 @@ const footerApplicationLinks: PropsAppLinks[] = [
 const footerUsersLinks: PropsAppLinks[] = [
 	{
 		label: "Mon espace",
-		baseUrl: "/#",
+		baseUrl: "/mon-espace",
 		type: "internal",
 	},
 	{
