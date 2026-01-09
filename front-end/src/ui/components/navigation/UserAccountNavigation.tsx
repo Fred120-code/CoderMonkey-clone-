@@ -7,9 +7,10 @@ import ActiveLink from "./Active-link";
 import { useRouter } from "next/router";
 
 const UserAccountNavigation = () => {
+	const router = useRouter();
+
 	const handleLogout = async () => {
 		const { error } = await firebaseLogoutUser();
-		const router = useRouter()
 		if (error) {
 			toast.error(error.message);
 			return;
@@ -17,7 +18,6 @@ const UserAccountNavigation = () => {
 
 		toast.success("A bientot sur Coders Monkeys");
 		// router.push("/connexion")
-
 	};
 	return (
 		<Box className=" flex flex-col gap-7">

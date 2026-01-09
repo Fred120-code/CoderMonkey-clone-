@@ -8,7 +8,7 @@ import { useAuth } from "@/context/AuthUserContext";
 
 interface PropsNavigation {}
 
-const navigation = ({}: PropsNavigation) => {
+const Navigation = ({}: PropsNavigation) => {
 
 	const {authUser, authUserLoading} = useAuth()
 	console.log("auth", authUser);
@@ -70,4 +70,4 @@ const navigation = ({}: PropsNavigation) => {
 	);
 };
 
-export default navigation;
+export default Navigation;

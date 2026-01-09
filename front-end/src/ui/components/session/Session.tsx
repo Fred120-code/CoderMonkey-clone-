@@ -1,5 +1,5 @@
 import { useAuth } from "@/context/AuthUserContext";
-import { REGISTERED } from "@/lib/session-statut-type";
+import { GUEST, REGISTERED } from "@/lib/session-statut-type";
 import { SessionStatutType } from "@/types/SessionStatutType";
 import ScreenSpinner from "@/ui/design-system/spinner/ScreenSpinner";
 import { useRouter } from "next/router";
@@ -12,6 +12,8 @@ interface Props {
 const Session = ({ children, sessionStatut }: Props) => {
 	const { authUserLoading, authUser } = useAuth();
 	const router = useRouter();
+
+
 	if (sessionStatut === REGISTERED && !authUserLoading) {
 		if (authUser) {
 			return <>{children}</>;
@@ -19,9 +21,17 @@ const Session = ({ children, sessionStatut }: Props) => {
 			router.push("/connexion");
 		}
 	}
+	if (sessionStatut === GUEST && !authUserLoading) {
+		if (!authUser) {
+			return <>{children}</>;
+		} else {
+			router.push("/mon-espace");
+		}
+	}
 	if (!sessionStatut && !authUserLoading) {
 		return <>{children}</>;
 	}
+    
 	return <ScreenSpinner />;
 };
 

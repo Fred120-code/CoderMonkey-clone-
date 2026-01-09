@@ -3,6 +3,7 @@ import Navigation from "@/ui/components/navigation/Navigation";
 import Footer from "@/ui/components/navigation/Footer";
 import Layout from "@/ui/components/layout/Layout";
 import ForgotPWContainer from "@/ui/modules/authentication/forgot-passWord/ForgotPW-Container";
+import { GUEST } from "@/lib/session-statut-type";
 
 export default function ForgotPassWord() {
 	return (
@@ -11,7 +12,7 @@ export default function ForgotPassWord() {
 				title="Recuparetion du mot de passe"
 				description="page de recuperation du mot de passe"
 			/>
-			<Layout isDisplayBreadcumbs={true} withsidebar={false}>
+			<Layout isDisplayBreadcumbs={true} withsidebar={false} sessionStatut={GUEST}>
 				<ForgotPWContainer />
 			</Layout>
 		</div>

@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import Image from "next/image";
 import logoMonkey from "public/assets/svg/logo.svg";
 
 export interface PropsLogo {
@@ -32,10 +32,11 @@ const Logo = ({ size= "medium" }: PropsLogo) => {
 
 	return (
 		<div>
-			<img
+			<Image
 				src={src || `/assets/svg/logo.svg`}
 				alt="logoMonkey"
-				style={{ width: `${sizeLogo}px`, height: "auto" }}
+				width={sizeLogo}
+			 height= {sizeLogo}
 			/>
 		</div>
 	);
