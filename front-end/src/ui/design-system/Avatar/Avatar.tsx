@@ -7,7 +7,7 @@ interface PropsLogo {
 	alt: string;
 }
 
-const Logo = ({ size = "medium", src, alt }: PropsLogo) => {
+const Avatar = ({ size = "medium", src, alt }: PropsLogo) => {
 	let sizeLogo: string = "";
 
 	switch (size) {
@@ -29,7 +29,7 @@ const Logo = ({ size = "medium", src, alt }: PropsLogo) => {
 		<div className={clsx(sizeLogo, "bg-gray-400 rounded-full relative")}>
 			<Image
 				fill
-				src={src}
+				src={src ? src : "/assets/svg/barrel.svg"}
 				alt={alt}
 				className="rounded-full object-center object-cover"
 			/>
@@ -37,4 +37,4 @@ const Logo = ({ size = "medium", src, alt }: PropsLogo) => {
 	);
 };
 
-export default Logo;
+export default Avatar;

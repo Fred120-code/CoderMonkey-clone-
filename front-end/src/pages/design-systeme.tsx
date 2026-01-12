@@ -6,7 +6,7 @@ import Layout from "@/ui/components/layout/Layout";
 
 //DESING SYSTEM
 import Button from "@/ui/design-system/button/Button";
-import Avatar from "@/ui/design-system/logo/Avatar";
+import Avatar from "@/ui/design-system/Avatar/Avatar";
 import Logo from "@/ui/design-system/logo/Logo";
 import Spinner from "@/ui/design-system/spinner/Spinner";
 import Typography from "@/ui/design-system/typography/Typography";
@@ -18,10 +18,10 @@ export default function DesingSystem() {
 	return (
 		<div>
 			<Seo title="Desing-systeme" description="hello world" />
-			<Layout isDisplayBreadcumbs ={true}>
+			<Layout isDisplayBreadcumbs={true}>
 				<Container className="space-y-10 py-10">
 					<div className="flex items-center gap-2 border border-gray-400 rounded p-5">
-						<Logo size="very-small"/>
+						<Logo size="very-small" />
 						<Logo size="small" />
 						<Logo size="medium" />
 						<Logo size="large" />

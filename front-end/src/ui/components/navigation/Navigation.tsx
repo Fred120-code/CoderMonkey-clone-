@@ -5,15 +5,30 @@ import Button from "@/ui/design-system/button/Button";
 import Link from "next/link";
 import ActiveLink from "./Active-link";
 import { useAuth } from "@/context/AuthUserContext";
+import AccountAvatarLink from "./AccountAvatarLink";
 
 interface PropsNavigation {}
 
 const Navigation = ({}: PropsNavigation) => {
-
-	const {authUser, authUserLoading} = useAuth()
+	const { authUser, authUserLoading } = useAuth();
 	console.log("auth", authUser);
 	console.log("authUserLoading", authUserLoading);
-	
+
+	const authentificationSystem = (
+		<div className="flex items-center gap-2">
+			<Button size="small" variants="accent" baseUrl="/connexion">
+				Connexion
+			</Button>
+			<Button
+				size="small"
+				variants="secondary"
+				baseUrl="/connexion/inscription"
+			>
+				Rejoindre
+			</Button>
+		</div>
+	);
+
 	return (
 		<div className="border-b-2 border-gray-400">
 			<Container className="py-1.5 flex justify-between items-center gap-7">
@@ -48,23 +63,8 @@ const Navigation = ({}: PropsNavigation) => {
 						<ActiveLink href="/fromations">Fromations</ActiveLink>
 						<ActiveLink href="/contacts">Contacts</ActiveLink>
 					</Typography>
-					<div className="flex items-center gap-2">
-						<Button
-							size="small"
-							variants="accent"
-							baseUrl="/connexion"
-						>
-							Connexion
-						</Button>
-						<Button
-							size="small"
-							variants="secondary"
-							baseUrl="/connexion/inscription"
-						>
-							Rejoindre
-						</Button>
-					</div>
 				</div>
+				{!authUser ? authentificationSystem : <AccountAvatarLink/>}
 			</Container>
 		</div>
 	);
