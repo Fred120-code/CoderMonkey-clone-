@@ -55,7 +55,7 @@ module.exports = {
 				{
 					lineHeight: "60px",
 					letterSpacing: "-2.5px",
-					fontWeight: "500",
+					fontWeight: "550",
 				},
 			],
 			"5xl": [
@@ -63,7 +63,7 @@ module.exports = {
 				{
 					lineHeight: "54px",
 					letterSpacing: "-1.600000023841858px",
-					fontWeight: "500",
+					fontWeight: "540",
 				},
 			],
 			"4xl": [
@@ -99,7 +99,7 @@ module.exports = {
 				},
 			],
 			lg: [
-				"21px",
+				"19px",
 				{
 					lineHeight: "30px",
 					letterSpacing: "-0.800000011920929px",
@@ -109,7 +109,7 @@ module.exports = {
 			base: [
 				"17px",
 				{
-					lineHeight: "25px",
+					lineHeight: "30px",
 					letterSpacing: "-0.699999988079071px",
 					fontWeight: "400",
 				},
@@ -139,7 +139,7 @@ module.exports = {
 				},
 			],
 			caption3: [
-				"16px",
+				"15px",
 				{
 					lineHeight: "18px",
 					letterSpacing: "-0.5px",

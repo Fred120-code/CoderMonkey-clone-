@@ -52,7 +52,7 @@ const Navigation = ({}: PropsNavigation) => {
 				</Link>
 				<div className="flex items-center gap-7">
 					<Typography
-						variant="caption4"
+						variant="caption3"
 						components="div"
 						className="flex items-center gap-7"
 					>
