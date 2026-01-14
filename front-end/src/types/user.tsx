@@ -16,4 +16,5 @@ export interface UserDocument {
 	email: string;
 	how_did_hear: string;
 	creationDate: Timestamp;
+	onbordingIsCompleted: boolean;
 }

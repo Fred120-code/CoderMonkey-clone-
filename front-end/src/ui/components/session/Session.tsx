@@ -12,7 +12,36 @@ interface Props {
 const Session = ({ children, sessionStatut }: Props) => {
 	const { authUserLoading, authUser } = useAuth();
 	const router = useRouter();
+	const onboardingIsCompleted = authUser?.userDocument?.onbordingIsCompleted;
 
+	const shouldRedirectToOnboarding = () => {
+		return (
+			!authUserLoading &&
+			authUser &&
+			!onboardingIsCompleted &&
+			router.asPath !== "/onboarding"
+		);
+	};	
+	
+	const shouldNotRedirectToOnboarding = () => {
+		return (
+			!authUserLoading &&
+			authUser &&
+			onboardingIsCompleted &&
+			router.asPath === "/onboarding"
+		);
+	};
+
+	if (shouldRedirectToOnboarding()) {
+		router.push("onboarding")
+		return <ScreenSpinner/>
+	}
+
+
+	if (shouldNotRedirectToOnboarding()) {
+		router.push("mon-espace");
+		return <ScreenSpinner />;
+	}
 
 	if (sessionStatut === REGISTERED && !authUserLoading) {
 		if (authUser) {
@@ -31,7 +60,7 @@ const Session = ({ children, sessionStatut }: Props) => {
 	if (!sessionStatut && !authUserLoading) {
 		return <>{children}</>;
 	}
-    
+
 	return <ScreenSpinner />;
 };
 

@@ -10,9 +10,8 @@ import AccountAvatarLink from "./AccountAvatarLink";
 interface PropsNavigation {}
 
 const Navigation = ({}: PropsNavigation) => {
-	const { authUser, authUserLoading } = useAuth();
+	const { authUser } = useAuth();
 	console.log("auth", authUser);
-	console.log("authUserLoading", authUserLoading);
 
 	const authentificationSystem = (
 		<div className="flex items-center gap-2">
@@ -64,7 +63,7 @@ const Navigation = ({}: PropsNavigation) => {
 						<ActiveLink href="/contacts">Contacts</ActiveLink>
 					</Typography>
 				</div>
-				{!authUser ? authentificationSystem : <AccountAvatarLink/>}
+				{!authUser ? authentificationSystem : <AccountAvatarLink />}
 			</Container>
 		</div>
 	);

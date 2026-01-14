@@ -8,7 +8,7 @@ import { SessionStatutType } from "@/types/SessionStatutType";
 
 interface Props {
 	children: React.ReactNode;
-	isDisplayBreadcumbs: boolean;
+	isDisplayBreadcumbs?: boolean;
 	withsidebar?: boolean;
 	sessionStatut?: SessionStatutType;
 }
@@ -16,7 +16,7 @@ interface Props {
 const Layout = ({
 	children,
 	isDisplayBreadcumbs = true,
-	withsidebar = true,
+	withsidebar = false,
 	sessionStatut,
 }: Props) => {
 	let view: React.ReactElement = <></>;
