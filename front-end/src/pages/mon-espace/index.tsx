@@ -7,7 +7,7 @@ export default function Connexion() {
 	return (
 		<div>
 			<Seo title="Mon espace" description="Mon espace personnel" />
-			<Layout isDisplayBreadcumbs={true} sessionStatut={REGISTERED}>
+			<Layout isDisplayBreadcumbs={true} sessionStatut={REGISTERED} withsidebar={true}>
 				<UserAccountContainer />
 			</Layout>
 		</div>
