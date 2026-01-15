@@ -28,11 +28,26 @@ export default function useFirebaseAuth() {
 		unsubscribeRef.current = onSnapshot(
 			ref,
 			(snapshot) => {
+				const raw = snapshot.exists()
+					? (snapshot.data() as any)
+					: undefined;
+				// Certains documents peuvent contenir les champs sous une clé `data`.
+				const src = raw && raw.data ? raw.data : raw;
+				let normalizedUserDocument: UserDocument | undefined =
+					undefined;
+				if (src) {
+					normalizedUserDocument = {
+						...src,
+						onboardingIsCompleted:
+							src.onboardingIsCompleted ??
+							src.onbordingIsCompleted ??
+							false,
+					} as UserDocument;
+				}
+
 				setAuthUser({
 					...user,
-					userDocument: snapshot.exists()
-						? (snapshot.data() as UserDocument)
-						: undefined,
+					userDocument: normalizedUserDocument,
 				});
 				setAuthUserLoading(false);
 			},
