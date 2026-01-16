@@ -26,15 +26,15 @@ const OnboardingFooter = ({
 		actionButtonTitle = "Continuer";
 	}
 	return (
-		<div className=" absolute bottom-0 left-0 w-full p-5 bg-white border-t border-gray-400">
-			<div className={clsx( 
-                
-                prevStep &&  !nextStep && "justify-start",
-                prevStep &&  nextStep && "justify-between",
-                !prevStep && nextStep && "justify-end",
-                "flex items-center gap-5"
-                
-                )}>
+		<div className=" absolute bottom-0 left-0 w-full p-5 bg-white border-t border-gray-400 ">
+			<div
+				className={clsx(
+					prevStep && !nextStep && "justify-start",
+					prevStep && nextStep && "justify-between",
+					!prevStep && nextStep && "justify-end",
+					"flex items-center gap-5 max-w-7xl mx-auto "
+				)}
+			>
 				{prevStep && (
 					<Button
 						disabled={isLoading}
@@ -45,12 +45,8 @@ const OnboardingFooter = ({
 					</Button>
 				)}
 
-
 				{nextStep && (
-					<Button
-						isloading={isLoading}
-						action={nextStep}
-					>
+					<Button isloading={isLoading} action={nextStep}>
 						{actionButtonTitle}
 					</Button>
 				)}

@@ -19,6 +19,16 @@ const OnboardingContainer = () => {
 			label: "Profile",
 			component: { step: ProfileStep },
 		},
+		{
+			id: 3,
+			label: "test3",
+			component: { step: ProfileStep },
+		},
+		{
+			id: 4,
+			label: "test4",
+			component: { step: ProfileStep },
+		},
 	];
 
 	//permet d'obtenir la step courante

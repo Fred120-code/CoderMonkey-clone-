@@ -1,9 +1,24 @@
 import { BaseComponentProps } from "@/types/OnboardingStepList";
-import Button from "@/ui/design-system/button/Button";
 import React from "react";
+import OnboardingFooter from "../../footer/OnboardingFooter";
 
-const ProfileStep = ({ nextStep, prevStep }: BaseComponentProps) => {
-	return <div>ProfileStep</div>;
+const ProfileStep = ({
+	nextStep,
+	prevStep,
+	isFinalStep,
+	isFirtStep,
+}: BaseComponentProps) => {
+	return (
+		<div>
+			profilestep
+			<OnboardingFooter
+				nextStep={nextStep}
+				prevStep={prevStep}
+				isFinalStep={isFinalStep}
+				isFirtStep={isFirtStep}
+			/>
+		</div>
+	);
 };
 
 export default ProfileStep;
