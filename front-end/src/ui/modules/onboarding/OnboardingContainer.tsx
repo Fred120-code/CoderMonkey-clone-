@@ -8,16 +8,16 @@ const OnboardingContainer = () => {
 	const [currentStep, setCurrentStep] = useState<number>(1);
 
 	//liste de step
-	const stepList :OnboardingStepListInterface[]= [
+	const stepList: OnboardingStepListInterface[] = [
 		{
 			id: 1,
 			label: "Bienvenue",
-			component: { step: WelcomeStep  },
+			component: { step: WelcomeStep },
 		},
 		{
 			id: 2,
 			label: "Profile",
-			component: { step: ProfileStep  },
+			component: { step: ProfileStep },
 		},
 	];
 
