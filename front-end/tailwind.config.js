@@ -131,7 +131,7 @@ module.exports = {
 				},
 			],
 			caption2: [
-				"18px",
+				"16px",
 				{
 					lineHeight: "20px",
 					letterSpacing: "-0.30000001192092896px",
@@ -139,7 +139,7 @@ module.exports = {
 				},
 			],
 			caption3: [
-				"15px",
+				"14px",
 				{
 					lineHeight: "18px",
 					letterSpacing: "-0.5px",

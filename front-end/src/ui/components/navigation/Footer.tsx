@@ -90,13 +90,13 @@ const FooterLink = ({ data }: footerLink) => {
 		<div className="min-w-[150px]">
 			<Typographie
 				theme="white"
-				variant="caption3"
+				variant="caption2"
 				weight="medium"
 				className="pb-5"
 			>
 				{data.label}
 			</Typographie>
-			<Typographie variant="caption4" theme="gray" className="space-y-4">
+			<Typographie variant="caption3" theme="gray" className="space-y-4">
 				{LinkList}
 			</Typographie>
 		</div>
