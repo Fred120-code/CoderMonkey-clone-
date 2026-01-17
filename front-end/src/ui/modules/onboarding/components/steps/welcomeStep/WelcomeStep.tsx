@@ -4,11 +4,14 @@ import OnboardingFooter from "../../footer/OnboardingFooter";
 import Container from "@/ui/components/container/Container";
 import Typography from "@/ui/design-system/typography/Typography";
 import Image from "next/image";
+import OnboardingTabs from "../../tabs/OnboardingTabs";
 
 const WelcomeStep = ({
 	nextStep,
 	isFinalStep,
 	isFirtStep,
+	stepList,
+	getCurrentStep,
 }: BaseComponentProps) => {
 	return (
 		<div className="relative h-screen pb-[91px]">
@@ -16,6 +19,7 @@ const WelcomeStep = ({
 				<Container className="grid grid-cols-12 h-full">
 					<div className="relative z-0 flex items-center h-full col-span-6 py-10">
 						<div className="w-full space-y-5 pb-4">
+							<OnboardingTabs tabs={stepList} getCurrentStep={getCurrentStep}/>
 							<Typography
 								variant="h1"
 								components="h1"
@@ -51,7 +55,6 @@ const WelcomeStep = ({
 								alt="rocket"
 								width={811}
 								height={596}
-								// className=" absolute right-0 z-0 rounded-[10px]"
 							/>
 						</div>
 					</div>
