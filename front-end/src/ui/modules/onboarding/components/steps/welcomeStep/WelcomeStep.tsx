@@ -5,6 +5,7 @@ import Container from "@/ui/components/container/Container";
 import Typography from "@/ui/design-system/typography/Typography";
 import Image from "next/image";
 import OnboardingTabs from "../../tabs/OnboardingTabs";
+import OnboardingLayout from "../../OnboardingLayout";
 
 const WelcomeStep = ({
 	nextStep,
@@ -14,12 +15,15 @@ const WelcomeStep = ({
 	getCurrentStep,
 }: BaseComponentProps) => {
 	return (
-		<div className="relative h-screen pb-[91px]">
+		<OnboardingLayout>
 			<div className="h-full overflow-auto">
 				<Container className="grid grid-cols-12 h-full">
 					<div className="relative z-0 flex items-center h-full col-span-6 py-10">
 						<div className="w-full space-y-5 pb-4">
-							<OnboardingTabs tabs={stepList} getCurrentStep={getCurrentStep}/>
+							<OnboardingTabs
+								tabs={stepList}
+								getCurrentStep={getCurrentStep}
+							/>
 							<Typography
 								variant="h1"
 								components="h1"
@@ -65,7 +69,7 @@ const WelcomeStep = ({
 				isFinalStep={isFinalStep}
 				isFirtStep={isFirtStep}
 			/>
-		</div>
+		</OnboardingLayout>
 	);
 };
 

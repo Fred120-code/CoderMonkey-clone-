@@ -5,6 +5,7 @@ import Container from "@/ui/components/container/Container";
 import OnboardingTabs from "../../tabs/OnboardingTabs";
 import Typography from "@/ui/design-system/typography/Typography";
 import Image from "next/image";
+import OnboardingLayout from "../../OnboardingLayout";
 
 const ProfileStep = ({
 	stepList,
@@ -15,7 +16,7 @@ const ProfileStep = ({
 	isFirtStep,
 }: BaseComponentProps) => {
 	return (
-		<div className="relative h-screen pb-[91px]">
+		<OnboardingLayout>
 			<div className="h-full overflow-auto">
 				<Container className="grid grid-cols-12 h-full">
 					<div className="relative z-0 flex items-center h-full col-span-6 py-10">
@@ -29,14 +30,7 @@ const ProfileStep = ({
 								components="h1"
 								className=""
 							>
-								Bienvenue sur l'app des {}
-								<Typography
-									components="span"
-									variant="h2"
-									theme="primary"
-								>
-									Developpeurs FullStack
-								</Typography>
+								Présente-toi !
 							</Typography>
 							<Typography
 								variant="body-base"
@@ -70,7 +64,7 @@ const ProfileStep = ({
 				isFinalStep={isFinalStep}
 				isFirtStep={isFirtStep}
 			/>
-		</div>
+		</OnboardingLayout>
 	);
 };
 
