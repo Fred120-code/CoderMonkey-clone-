@@ -43,12 +43,11 @@ const WelcomeStep = ({
 								components="p"
 								theme="gray"
 							>
-								Lorem ipsum dolor sit, amet consectetur
-								adipisicing elit. Repellat veniam ad
-								consequuntur dolorem fugiat ipsum quibusdam
-								magnam provident quaerat! Distinctio ut fugiat
-								perspiciatis error recusandae magnam quis
-								maiores vitae
+								Rejoins une communauté de développeurs
+								passionnés et commence ton parcours
+								d'apprentissage. Accélère ta progression avec
+								des cours, des projets concrets et des mentors
+								expérimentés.
 							</Typography>
 						</div>
 					</div>

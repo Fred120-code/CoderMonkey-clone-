@@ -37,12 +37,11 @@ const ProfileStep = ({
 								components="p"
 								theme="gray"
 							>
-								Lorem ipsum dolor sit, amet consectetur
-								adipisicing elit. Repellat veniam ad
-								consequuntur dolorem fugiat ipsum quibusdam
-								magnam provident quaerat! Distinctio ut fugiat
-								perspiciatis error recusandae magnam quis
-								maiores vitae
+								Complète ton profil pour que nous puissions
+								mieux te connaître. Cela nous permettra de
+								personnaliser ton expérience d'apprentissage et
+								te proposer des ressources adaptées à tes
+								besoins.
 							</Typography>
 						</div>
 					</div>
