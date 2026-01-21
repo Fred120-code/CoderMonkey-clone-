@@ -4,8 +4,11 @@ import OnboardingFooter from "../../footer/OnboardingFooter";
 import Container from "@/ui/components/container/Container";
 import OnboardingTabs from "../../tabs/OnboardingTabs";
 import Typography from "@/ui/design-system/typography/Typography";
-import Image from "next/image";
 import OnboardingLayout from "../../OnboardingLayout";
+import ProfileStepForm from "./ProfileStepForm";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { OnboardingProfileFormFieldsType } from "@/types/form";
+import useToggle from "@/hooks/useToggle";
 
 const ProfileStep = ({
 	stepList,
@@ -15,6 +18,26 @@ const ProfileStep = ({
 	isFinalStep,
 	isFirtStep,
 }: BaseComponentProps) => {
+	const { value: isLoading, setValue: setLoading } = useToggle();
+	const {
+		handleSubmit,
+		control,
+		formState: { errors },
+		register,
+		reset,
+		setValue,
+	} = useForm<OnboardingProfileFormFieldsType>();
+
+	const onSubmit: SubmitHandler<OnboardingProfileFormFieldsType> = async (
+		formData,
+	) => {
+		setLoading(true);
+
+		
+		nextStep();
+	};
+
+
 	return (
 		<OnboardingLayout>
 			<div className="h-full overflow-auto">
@@ -46,12 +69,16 @@ const ProfileStep = ({
 						</div>
 					</div>
 					<div className="flex items-center h-full col-span-6">
-						<div className="w-full">
-							<Image
-								src="/assets/svg/rocket.svg"
-								alt="rocket"
-								width={811}
-								height={596}
+						<div className="w-full flex justify-end">
+							<ProfileStepForm
+								form={{
+									errors,
+									control,
+									register,
+									handleSubmit,
+									onSubmit,
+									isLoading,
+								}}
 							/>
 						</div>
 					</div>

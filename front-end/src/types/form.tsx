@@ -21,3 +21,9 @@ export interface FromTypes {
 	register: any;
 	handleSubmit: any;
 }
+
+export interface OnboardingProfileFormFieldsType{
+	displayName: string;
+	expertise: string;
+	biography: string
+}
