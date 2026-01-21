@@ -11,6 +11,7 @@ interface Props {
 	id: string;
 	required?: boolean;
 	isAutocompleted?: boolean;
+	label?: string;
 }
 
 const Input = ({
@@ -23,24 +24,34 @@ const Input = ({
 	id,
 	required = true,
 	isAutocompleted = false,
+	label,
 }: Props) => {
 	return (
 		<div className="space-y-2">
+			{label && (
+				<Typography
+					variant="caption3"
+					components="div"
+					theme={ errors[id] ? "danger" : "gray"}
+				>
+					{label}
+				</Typography>
+			)}
 			<input
 				type={type}
 				placeholder={placholder}
 				disabled={isLoading}
 				className={clsx(
-          isLoading && "cursor-not-allowed",
+					isLoading && "cursor-not-allowed",
 					errors[id]
 						? " placeholder-alert-danger text-alert-danger"
 						: "placeholder-gray-600",
-					"w-full p-4 font-light border border-gray-400 rounded focus:outline-none focus:ring-1 focus:ring-primary "
+					"w-full p-4 font-light border border-gray-400 rounded focus:outline-none focus:ring-1 focus:ring-primary ",
 				)}
 				{...register(id, {
 					required: {
-						value:  required ,
-						message:  errorMsg ,
+						value: required,
+						message: errorMsg,
 					},
 				})}
 				autoComplete={isAutocompleted ? "on" : "off"}
