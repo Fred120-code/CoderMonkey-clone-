@@ -17,4 +17,7 @@ export interface UserDocument {
 	how_did_hear: string;
 	creationDate: Timestamp;
 	onboardingIsCompleted: boolean;
+	displayName: string;
+	expertise: string;
+	biography: string;
 }

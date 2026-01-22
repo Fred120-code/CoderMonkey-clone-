@@ -11,9 +11,7 @@ export const FirestoreCreateDoc = async (
 ) => {
 	try {
 		const documentRef = doc(db, collectionName, documentId);
-		await setDoc(documentRef, {
-			data,
-		});
+		await setDoc(documentRef, data);
 		return { data: true };
 	} catch (error) {
 		const firebaseError = error as FirebaseError;
@@ -34,9 +32,7 @@ export const FireStoreUpdateDoc = async (
 ) => {
 	try {
 		const documentRef = doc(db, collectionName, documentId);
-		await updateDoc(documentRef, {
-			data,
-		});
+		await updateDoc(documentRef, data);
 		return { data: true };
 	} catch (error) {
 		const firebaseError = error as FirebaseError;

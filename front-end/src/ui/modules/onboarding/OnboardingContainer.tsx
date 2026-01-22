@@ -22,12 +22,12 @@ const OnboardingContainer = () => {
 		{
 			id: 3,
 			label: "test3",
-			component: { step: ProfileStep },
+			component: { step: WelcomeStep },
 		},
 		{
 			id: 4,
 			label: "test4",
-			component: { step: ProfileStep },
+			component: { step: WelcomeStep },
 		},
 	];
 

@@ -1,6 +1,7 @@
 import { FromTypes } from "@/types/form";
 import Input from "@/ui/design-system/forms/Input";
-import React from "react";
+import TextArea from "@/ui/design-system/forms/TextArea";
+
 interface Props {
 	form: FromTypes;
 }
@@ -20,14 +21,24 @@ const ProfileStepForm = ({ form }: Props) => {
 			/>
 
 			<Input
-				label="Biography"
-				placholder="developpeur fullstack freelance...."
+				label="Expertise"
+				placholder="developpeur fullstack freelance"
 				isLoading={isLoading}
 				type="text"
 				register={register}
 				errorMsg="tu dois renseigner ton expertise"
 				id="expertise"
 				errors={errors}
+			/>
+			<TextArea
+				isLoading={isLoading}
+				placholder="parles-nous de toi..."
+				rows={5}
+				register={register}
+				errors={errors}
+				id="biography"
+				label="Biography"
+				required={false}
 			/>
 		</form>
 	);

@@ -9,6 +9,7 @@ import OnboardingLayout from "../../OnboardingLayout";
 
 const WelcomeStep = ({
 	nextStep,
+	prevStep,
 	isFinalStep,
 	isFirtStep,
 	stepList,
@@ -29,13 +30,13 @@ const WelcomeStep = ({
 								components="h1"
 								className=""
 							>
-								Bienvenue sur l'app des {}
+								Bienvenue sur {}
 								<Typography
 									components="span"
 									variant="h2"
 									theme="primary"
 								>
-									Developpeurs FullStack
+									Codeurs Monkey
 								</Typography>
 							</Typography>
 							<Typography
@@ -67,6 +68,7 @@ const WelcomeStep = ({
 				nextStep={nextStep}
 				isFinalStep={isFinalStep}
 				isFirtStep={isFirtStep}
+				prevStep={prevStep}
 			/>
 		</OnboardingLayout>
 	);

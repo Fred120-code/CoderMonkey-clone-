@@ -3,6 +3,7 @@ export interface RegisterFormFielsType {
 	password: string;
 	how_did_hear: string;
 }
+
 export interface LoginFormFielsType {
 	email: string;
 	password: string;
@@ -11,7 +12,6 @@ export interface LoginFormFielsType {
 export interface ForgotPasswordFielsType {
 	email: string;
 }
-
 
 export interface FromTypes {
 	control: any;
