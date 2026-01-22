@@ -21,8 +21,6 @@ const ProfileStep = ({
 	isFinalStep,
 	isFirtStep,
 }: BaseComponentProps) => {
-	const { authUser } = useAuth();
-
 	const { value: isLoading, setValue: setLoading } = useToggle();
 	const {
 		handleSubmit,
@@ -32,8 +30,9 @@ const ProfileStep = ({
 		reset,
 		setValue,
 	} = useForm<OnboardingProfileFormFieldsType>();
-
+	const { authUser } = useAuth();
 	const { displayName, expertise, biography } = authUser.userDocument;
+	console.log("authUser", authUser);
 
 	//display value is exist
 	useEffect(() => {
@@ -48,10 +47,12 @@ const ProfileStep = ({
 		}
 	});
 
+
+	//add formData in user doc
 	const handleUpdateUserDocument = async (
 		formData: OnboardingProfileFormFieldsType,
 	) => {
-		console.log("use api")
+		console.log("use api");
 		const { error } = await FireStoreUpdateDoc(
 			"users",
 			authUser.uid,
@@ -68,6 +69,7 @@ const ProfileStep = ({
 		nextStep();
 	};
 
+	//send form
 	const onSubmit: SubmitHandler<OnboardingProfileFormFieldsType> = async (
 		formData,
 	) => {
@@ -81,7 +83,7 @@ const ProfileStep = ({
 			handleUpdateUserDocument(formData);
 		}
 
-		nextStep()
+		nextStep();
 	};
 
 	return (
@@ -89,29 +91,31 @@ const ProfileStep = ({
 			<div className="h-full overflow-auto">
 				<Container className="grid grid-cols-12 h-full">
 					<div className="relative z-0 flex items-center h-full col-span-6 py-10">
-						<div className="w-full space-y-5 pb-4">
+						<div className="w-full space-y-28 pb-4">
 							<OnboardingTabs
 								tabs={stepList}
 								getCurrentStep={getCurrentStep}
 							/>
-							<Typography
-								variant="h1"
-								components="h1"
-								className=""
-							>
-								Présente-toi !
-							</Typography>
-							<Typography
-								variant="body-base"
-								components="p"
-								theme="gray"
-							>
-								Complète ton profil pour que nous puissions
-								mieux te connaître. Cela nous permettra de
-								personnaliser ton expérience d'apprentissage et
-								te proposer des ressources adaptées à tes
-								besoins.
-							</Typography>
+							<div>
+								<Typography
+									variant="h1"
+									components="h1"
+									className=""
+								>
+									Présente-toi !
+								</Typography>
+								<Typography
+									variant="body-base"
+									components="p"
+									theme="gray"
+								>
+									Complète ton profil pour que nous puissions
+									mieux te connaître. Cela nous permettra de
+									personnaliser ton expérience d'apprentissage
+									et te proposer des ressources adaptées à tes
+									besoins.
+								</Typography>
+							</div>
 						</div>
 					</div>
 					<div className="flex items-center h-full col-span-6">
