@@ -57,7 +57,6 @@ const footer = () => {
 								Joran Fred 
 							</a>
 						}
-						{` Dev_Web_Fullstack`}
 					</Typographie>
 					<div>
 						<SocialNetworkButton theme="gray" />

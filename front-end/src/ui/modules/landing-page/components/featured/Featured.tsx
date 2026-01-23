@@ -123,9 +123,10 @@ const Featured = () => {
 							components="p"
 							className="mb-4"
 						>
-							Nos reseaux sociaux {""}
+							Suis-moi sur les réseaux
+							{""}
 						</Typography>
-						<SocialNetworkButton/>
+						<SocialNetworkButton />
 					</div>
 				</div>
 			</Container>

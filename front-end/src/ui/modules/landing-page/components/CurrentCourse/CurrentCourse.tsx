@@ -12,7 +12,7 @@ const CurrentCourse = () => {
 					Formations React.js gratuite
 				</Typography>
 				<Typography variant="lead" components="h3" className="mb-5">
-					Apprend à coder l'app des singes codeur
+					Apprends à développer avec react
 				</Typography>{" "}
 				<Typography
 					variant="caption3"
@@ -20,13 +20,13 @@ const CurrentCourse = () => {
 					components="p"
 					className="mb-16"
 				>
-					Si tu veux un CV plus sexy que ton ex, suis cette formation
-					Complete !
+					Suis cette formation gratuite sur Youtube pour apprendre à
+					coder avec react.js
 				</Typography>
 				<a href="/#" target="_blank">
 					<div className="relative bg-gray-400 rounded h-[626px]">
 						<div className="flex flex-col items-center justify-center gap-2 relative bg-gray z-10 h-full rounded hover:opacity-95 opacity-0 animate text-white">
-							<RiPlayCircleLine size={49}/>
+							<RiPlayCircleLine size={49} />
 							<Typography
 								variant="caption2"
 								theme="white"

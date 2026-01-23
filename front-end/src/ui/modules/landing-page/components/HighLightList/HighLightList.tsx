@@ -32,7 +32,7 @@ const HighLightList = () => {
 					<Image fill src="/assets/svg/cake.svg" alt="cake" />
 				</div>
 				<div className="max-w-md space-y-7">
-					<Typography variant="h3" components="h2">
+					<Typography variant="h4" components="h4">
 						De novice à developpeur en un clin d'oeil
 					</Typography>
 					<div className="space-y-3">
@@ -60,7 +60,7 @@ const HighLightList = () => {
 			</div>
 			<div className="flex justify-center gap-24">
 				<div className="max-w-md space-y-7">
-					<Typography variant="h3" components="h2">
+					<Typography variant="h4" components="h4">
 						Booste ta carrière de developpeur !
 					</Typography>
 					<div className="space-y-3">

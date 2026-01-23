@@ -29,8 +29,7 @@ const CodeurSlack = () => {
 					theme="gray"
 					className="max-w-lg"
 				>
-					Rejoins-nous et obtient de l'aide, des conseils et pourquoi
-					pas de nousveaus potes
+					Rejoins-nous et obtiens de l’aide et des conseils
 				</Typography>
 				<Button baseUrl="/#" linkType={LinkType.EXTERNAL}>
 					Rejoins le groupe d'aide
