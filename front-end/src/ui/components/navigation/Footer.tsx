@@ -41,20 +41,21 @@ const footer = () => {
 						/>
 					</a>
 				</div>
-				<div className="flex">{footerNavigationLinks}</div>
+				<div className="flex gap-6">{footerNavigationLinks}</div>
 			</Container>
 
 			<Container className=" pb-8 space-y-5">
 				<hr className="text-gray-800" />
 				<div className="flex justify-between items-center">
 					<Typographie variant="caption4" theme="gray">
-						{`Copyrigth 2025 | Propulsed by`} {""}
+						© {new Date().getFullYear()}
+						{" | Propulsed by"} {""}
 						{
 							<a
 								href="https://github.com/Fred120-code"
 								target="_blank"
 							>
-								Joran Fred 
+								Joran Fred
 							</a>
 						}
 					</Typographie>
