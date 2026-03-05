@@ -54,7 +54,7 @@ export default function useFirebaseAuth() {
 			(error) => {
 				console.error("Firestore error:", error);
 				setAuthUserLoading(false);
-			}
+			},
 		);
 	};
 

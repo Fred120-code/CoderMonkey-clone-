@@ -15,7 +15,7 @@ export const firebaseCreateUser = async (email: string, password: string) => {
 		const userCredential = await createUserWithEmailAndPassword(
 			auth,
 			email,
-			password
+			password,
 		);
 		return { data: userCredential.user };
 	} catch (error) {
@@ -35,7 +35,7 @@ export const firebaseSignInUser = async (email: string, password: string) => {
 		const userCredential = await signInWithEmailAndPassword(
 			auth,
 			email,
-			password
+			password,
 		);
 		return { data: userCredential.user };
 	} catch (error) {
@@ -80,7 +80,6 @@ export const firebaseSendPasswordResetEmailUser = async (email: string) => {
 		};
 	}
 };
-
 
 //permet d'envoyer un email de confirmation
 export const sendEmailVerificationUser = async () => {

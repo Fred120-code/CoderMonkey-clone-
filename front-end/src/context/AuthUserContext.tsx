@@ -1,6 +1,6 @@
 import { UserDocument } from "@/types/user";
 import { createContext, useContext } from "react";
-import  useFirebaseAuth  from "../hooks/useFirebaseAuth";
+import useFirebaseAuth from "../hooks/useFirebaseAuth";
 
 const init = {
 	uid: "",
@@ -27,14 +27,14 @@ export function AuthUserProvider({ children }: Props) {
 		<authUserContext.Provider
 			value={{
 				authUser: auth.authUser as {
-                    uid: string;
-                    email: string;
-                    displayName: string;
-                    emailVerified: boolean;
-                    phoneNumber: string;
-                    photoURL: string;
-                    userDocument: UserDocument;
-                },
+					uid: string;
+					email: string;
+					displayName: string;
+					emailVerified: boolean;
+					phoneNumber: string;
+					photoURL: string;
+					userDocument: UserDocument;
+				},
 				authUserLoading: auth.authUserLoading,
 			}}
 		>
@@ -43,4 +43,4 @@ export function AuthUserProvider({ children }: Props) {
 	);
 }
 
-export const useAuth = ()=> useContext(authUserContext)
+export const useAuth = () => useContext(authUserContext);
