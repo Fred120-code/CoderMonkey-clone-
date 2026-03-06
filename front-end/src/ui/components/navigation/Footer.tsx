@@ -20,8 +20,8 @@ const footer = () => {
 
 	return (
 		<div className="bg-gray">
-			<Container className="flex justify-between pt-11 ">
-				<div className="flex items-center flex-col gap-1">
+			<Container className="md:flex md:justify-between md:pt-11 grid grid-cols-1 pb-10">
+				<div className="flex items-center flex-col gap-1  pb-7 pt-5">
 					<Typographie
 						variant="caption3"
 						theme="white"
@@ -41,7 +41,7 @@ const footer = () => {
 						/>
 					</a>
 				</div>
-				<div className="flex gap-6">{footerNavigationLinks}</div>
+				<div className="md:flex gap-6 grid grid-cols-2 ms:space-y-6">{footerNavigationLinks}</div>
 			</Container>
 
 			<Container className=" pb-8 space-y-5">
