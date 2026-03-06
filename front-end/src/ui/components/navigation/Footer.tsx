@@ -41,7 +41,7 @@ const footer = () => {
 						/>
 					</a>
 				</div>
-				<div className="md:flex gap-6 grid grid-cols-2 space-y-6">{footerNavigationLinks}</div>
+				<div className="md:flex gap-6 grid grid-cols-2 ms:space-y-6">{footerNavigationLinks}</div>
 			</Container>
 
 			<Container className=" pb-8 space-y-5">
