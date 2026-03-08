@@ -28,7 +28,7 @@ const Layout = ({
 					<div className=" col-span-3">
 						<UserAccountNavigation />
 					</div>
-					<div className=" col-span-9">{children}</div>
+					<div className="col-span-9">{children}</div>
 				</div>
 			</Container>
 		);
